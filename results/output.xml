@@ -1,0 +1,2583 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.12.4 on win32)" generated="2025-08-21T14:19:14.999578" rpa="false" schemaversion="5">
+<suite id="s1" name="Dhipaya" source="C:\Users\kaako\Documents\Test\Dhipaya\Dhipaya">
+<suite id="s1-s1" name="TestScript" source="C:\Users\kaako\Documents\Test\Dhipaya\Dhipaya\TestScript">
+<suite id="s1-s1-s1" name="FlowTest" source="C:\Users\kaako\Documents\Test\Dhipaya\Dhipaya\TestScript\FlowTest.robot">
+<test id="s1-s1-s1-t1" name="Select Insurance Success" line="23">
+<kw name="Open Web Browser" owner="MainPage">
+<kw name="_Set Test Local Variables" owner="MainPage" type="SETUP">
+<variable name="${_TIMEOUT_RETURN_STATUS}" scope="test">
+<msg time="2025-08-21T14:19:15.553585" level="INFO">${_TIMEOUT_RETURN_STATUS} = 3</msg>
+<var>${Time_Out.Return_Status}</var>
+<status status="PASS" start="2025-08-21T14:19:15.553585" elapsed="0.000000"/>
+</variable>
+<variable name="${_TIMEOUT_RETURN_STATUS_MEDIUM}" scope="test">
+<msg time="2025-08-21T14:19:15.554585" level="INFO">${_TIMEOUT_RETURN_STATUS_MEDIUM} = 10</msg>
+<var>${Time_Out.Return_Status_Medium}</var>
+<status status="PASS" start="2025-08-21T14:19:15.553585" elapsed="0.002001"/>
+</variable>
+<variable name="${_TIMEOUT_RETURN_STATUS_QUICK}" scope="test">
+<msg time="2025-08-21T14:19:15.556843" level="INFO">${_TIMEOUT_RETURN_STATUS_QUICK} = 1</msg>
+<var>${Time_Out.Return_Status_Quick}</var>
+<status status="PASS" start="2025-08-21T14:19:15.555586" elapsed="0.001257"/>
+</variable>
+<variable name="${_TIMEOUT_LONG}" scope="test">
+<msg time="2025-08-21T14:19:15.557854" level="INFO">${_TIMEOUT_LONG} = 60</msg>
+<var>${Time_Out.Long}</var>
+<status status="PASS" start="2025-08-21T14:19:15.556843" elapsed="0.001011"/>
+</variable>
+<variable name="${_TIMEOUT_DEFAULT}" scope="test">
+<msg time="2025-08-21T14:19:15.557854" level="INFO">${_TIMEOUT_DEFAULT} = 15</msg>
+<var>${Time_Out.Default}</var>
+<status status="PASS" start="2025-08-21T14:19:15.557854" elapsed="0.000000"/>
+</variable>
+<variable name="${_BTN}" scope="test">
+<msg time="2025-08-21T14:19:15.558861" level="INFO">${_BTN} = xpath=//a[@href='/shopping/compulsory/car-1.10']</msg>
+<var>${Xpath.Main.btnBox}</var>
+<status status="PASS" start="2025-08-21T14:19:15.557854" elapsed="0.001007"/>
+</variable>
+<variable name="${_COOKIE}" scope="test">
+<msg time="2025-08-21T14:19:15.558861" level="INFO">${_COOKIE} = xpath=//button[text()='ยอมรับทั้งหมด']</msg>
+<var>${Xpath.Main.Cookie}</var>
+<status status="PASS" start="2025-08-21T14:19:15.558861" elapsed="0.000000"/>
+</variable>
+<tag>robot:private</tag>
+<doc>เตรียมตัวแปรสำหรับใช้งานในแต่ละ Keywords</doc>
+<status status="PASS" start="2025-08-21T14:19:15.553585" elapsed="0.005276"/>
+</kw>
+<kw name="Convert To Lower Case" owner="String">
+<msg time="2025-08-21T14:19:15.558861" level="INFO">${browser_lower} = chrome</msg>
+<var>${browser_lower}</var>
+<arg>${browser}</arg>
+<doc>Converts string to lower case.</doc>
+<status status="PASS" start="2025-08-21T14:19:15.558861" elapsed="0.001506"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:15.560367" level="INFO">Opening browser 'chrome' to base url 'https://insurverse-uat-environment-insure.insurverse.co.th/shopping/compulsory'.</msg>
+<arg>url=${url}</arg>
+<arg>browser=${browser_lower}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-08-21T14:19:15.560367" elapsed="2.040114"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-08-21T14:19:17.601496" elapsed="0.126173"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-21T14:19:22.731466" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-21T14:19:17.729675" elapsed="5.003915"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:22.742949" level="INFO">Clicking element 'xpath=//button[text()='ยอมรับทั้งหมด']'.</msg>
+<arg>${_COOKIE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:22.733590" elapsed="0.079502"/>
+</kw>
+<arg>url=${_URL}</arg>
+<arg>browser=${_BROWSER}</arg>
+<doc>Owner : Danai Lertkamjornwat
+|     ***| Description |***
+|     Keyword สำหรับเข้าสูเว็บไซต์
+--------------------------------------------------------------------------
+|     ***| Required Parameter |***
+|     $url       : ระบุลิ้งเว็ปไซต์
+|     $browser   : ระบุบราวเซอร์
+--------------------------------------------------------------------------
+|     ***| Examples of use |***
+|     Open Web Browser     https://insurverse-uat-environment-insure.insurverse.co.th/shopping/compulsory    chrome  🗂️ ใช้ภายในไฟล์
+|     MainPage.Open Web Browser   https://insurverse-uat-environment-insure.insurverse.co.th/shopping/compulsory    chrome  🌐 ใช้ภายนอกไฟล์
+==&gt;</doc>
+<status status="PASS" start="2025-08-21T14:19:15.552622" elapsed="7.260976"/>
+</kw>
+<kw name="Select Insurance Type" owner="MainPage">
+<kw name="_Set Test Local Variables" owner="MainPage" type="SETUP">
+<variable name="${_TIMEOUT_RETURN_STATUS}" scope="test">
+<msg time="2025-08-21T14:19:22.831381" level="INFO">${_TIMEOUT_RETURN_STATUS} = 3</msg>
+<var>${Time_Out.Return_Status}</var>
+<status status="PASS" start="2025-08-21T14:19:22.830333" elapsed="0.001048"/>
+</variable>
+<variable name="${_TIMEOUT_RETURN_STATUS_MEDIUM}" scope="test">
+<msg time="2025-08-21T14:19:22.832740" level="INFO">${_TIMEOUT_RETURN_STATUS_MEDIUM} = 10</msg>
+<var>${Time_Out.Return_Status_Medium}</var>
+<status status="PASS" start="2025-08-21T14:19:22.831381" elapsed="0.002369"/>
+</variable>
+<variable name="${_TIMEOUT_RETURN_STATUS_QUICK}" scope="test">
+<msg time="2025-08-21T14:19:22.834749" level="INFO">${_TIMEOUT_RETURN_STATUS_QUICK} = 1</msg>
+<var>${Time_Out.Return_Status_Quick}</var>
+<status status="PASS" start="2025-08-21T14:19:22.833750" elapsed="0.000999"/>
+</variable>
+<variable name="${_TIMEOUT_LONG}" scope="test">
+<msg time="2025-08-21T14:19:22.835748" level="INFO">${_TIMEOUT_LONG} = 60</msg>
+<var>${Time_Out.Long}</var>
+<status status="PASS" start="2025-08-21T14:19:22.834749" elapsed="0.000999"/>
+</variable>
+<variable name="${_TIMEOUT_DEFAULT}" scope="test">
+<msg time="2025-08-21T14:19:22.838779" level="INFO">${_TIMEOUT_DEFAULT} = 15</msg>
+<var>${Time_Out.Default}</var>
+<status status="PASS" start="2025-08-21T14:19:22.835748" elapsed="0.009224"/>
+</variable>
+<variable name="${_BTN}" scope="test">
+<msg time="2025-08-21T14:19:22.845974" level="INFO">${_BTN} = xpath=//a[@href='/shopping/compulsory/car-1.10']</msg>
+<var>${Xpath.Main.btnBox}</var>
+<status status="PASS" start="2025-08-21T14:19:22.844972" elapsed="0.070286"/>
+</variable>
+<variable name="${_COOKIE}" scope="test">
+<msg time="2025-08-21T14:19:22.917775" level="INFO">${_COOKIE} = xpath=//button[text()='ยอมรับทั้งหมด']</msg>
+<var>${Xpath.Main.Cookie}</var>
+<status status="PASS" start="2025-08-21T14:19:22.916266" elapsed="0.001509"/>
+</variable>
+<tag>robot:private</tag>
+<doc>เตรียมตัวแปรสำหรับใช้งานในแต่ละ Keywords</doc>
+<status status="PASS" start="2025-08-21T14:19:22.828826" elapsed="0.101722"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${_BTN}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-21T14:19:22.931055" elapsed="0.178782"/>
+</kw>
+<msg time="2025-08-21T14:19:23.109837" level="INFO">${Status} = True</msg>
+<var>${Status}</var>
+<arg>SeleniumLibrary.Wait Until Element Is Visible</arg>
+<arg>${_BTN}</arg>
+<arg>${timeout}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-08-21T14:19:22.931055" elapsed="0.178782"/>
+</kw>
+<if>
+<branch type="IF" condition="${Status}">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:23.182173" level="INFO">Clicking element 'xpath=//a[@href='/shopping/compulsory/car-1.10']'.</msg>
+<arg>${_BTN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:23.182173" elapsed="0.278364"/>
+</kw>
+<status status="PASS" start="2025-08-21T14:19:23.181343" elapsed="0.279194"/>
+</branch>
+<branch type="ELSE">
+<kw name="Fail" owner="BuiltIn">
+<arg>msg=Button Not Found</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-08-21T14:19:23.461547" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-08-21T14:19:23.460537" elapsed="0.001010"/>
+</branch>
+<status status="PASS" start="2025-08-21T14:19:23.181343" elapsed="0.280204"/>
+</if>
+<doc>Owner : Danai Lertkamjornwat
+|     ***| Description |***
+|     Keyword เลือก Insurance Type
+--------------------------------------------------------------------------
+|     ***| Optional Parameter |***
+|     $timeout    : เวลา Wait Element (ค่า default = 15)
+--------------------------------------------------------------------------
+|     ***| Examples of use |***
+|     Select Insurance Type     🗂️ ใช้ภายในไฟล์
+|     MainPage.Select Insurance Type   🌐 ใช้ภายนอกไฟล์
+==&gt;</doc>
+<status status="PASS" start="2025-08-21T14:19:22.825847" elapsed="0.635700"/>
+</kw>
+<kw name="Click Like This Plan Button" owner="BenefitsPage">
+<kw name="_Set Test Local Variables" owner="BenefitsPage" type="SETUP">
+<variable name="${_TIMEOUT_RETURN_STATUS}" scope="test">
+<msg time="2025-08-21T14:19:23.533994" level="INFO">${_TIMEOUT_RETURN_STATUS} = 3</msg>
+<var>${Time_Out.Return_Status}</var>
+<status status="PASS" start="2025-08-21T14:19:23.532823" elapsed="0.001171"/>
+</variable>
+<variable name="${_TIMEOUT_RETURN_STATUS_MEDIUM}" scope="test">
+<msg time="2025-08-21T14:19:23.543512" level="INFO">${_TIMEOUT_RETURN_STATUS_MEDIUM} = 10</msg>
+<var>${Time_Out.Return_Status_Medium}</var>
+<status status="PASS" start="2025-08-21T14:19:23.533994" elapsed="0.010518"/>
+</variable>
+<variable name="${_TIMEOUT_RETURN_STATUS_QUICK}" scope="test">
+<msg time="2025-08-21T14:19:23.545554" level="INFO">${_TIMEOUT_RETURN_STATUS_QUICK} = 1</msg>
+<var>${Time_Out.Return_Status_Quick}</var>
+<status status="PASS" start="2025-08-21T14:19:23.544512" elapsed="0.001042"/>
+</variable>
+<variable name="${_TIMEOUT_LONG}" scope="test">
+<msg time="2025-08-21T14:19:23.546564" level="INFO">${_TIMEOUT_LONG} = 60</msg>
+<var>${Time_Out.Long}</var>
+<status status="PASS" start="2025-08-21T14:19:23.545554" elapsed="0.001010"/>
+</variable>
+<variable name="${_TIMEOUT_DEFAULT}" scope="test">
+<msg time="2025-08-21T14:19:23.573355" level="INFO">${_TIMEOUT_DEFAULT} = 15</msg>
+<var>${Time_Out.Default}</var>
+<status status="PASS" start="2025-08-21T14:19:23.546564" elapsed="0.026791"/>
+</variable>
+<variable name="${_BTN_LIKE_THIS_PLAN}" scope="test">
+<msg time="2025-08-21T14:19:23.575200" level="INFO">${_BTN_LIKE_THIS_PLAN} = xpath=//div[text()='ถูกใจแผนนี้']</msg>
+<var>${Xpath.Benefits.btnLikeThisPlan}</var>
+<status status="PASS" start="2025-08-21T14:19:23.573355" elapsed="0.002857"/>
+</variable>
+<tag>robot:private</tag>
+<doc>เตรียมตัวแปรสำหรับใช้งานในแต่ละ Keywords</doc>
+<status status="PASS" start="2025-08-21T14:19:23.531434" elapsed="0.044778"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${_BTN_LIKE_THIS_PLAN}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-21T14:19:23.579147" elapsed="0.050148"/>
+</kw>
+<msg time="2025-08-21T14:19:23.630804" level="INFO">${Status} = True</msg>
+<var>${Status}</var>
+<arg>SeleniumLibrary.Wait Until Element Is Visible</arg>
+<arg>${_BTN_LIKE_THIS_PLAN}</arg>
+<arg>${timeout}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-08-21T14:19:23.577722" elapsed="0.053082"/>
+</kw>
+<if>
+<branch type="IF" condition="${Status}">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:23.632819" level="INFO">Clicking element 'xpath=//div[text()='ถูกใจแผนนี้']'.</msg>
+<arg>${_BTN_LIKE_THIS_PLAN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:23.631812" elapsed="0.110701"/>
+</kw>
+<status status="PASS" start="2025-08-21T14:19:23.630804" elapsed="0.112715"/>
+</branch>
+<branch type="ELSE">
+<kw name="Fail" owner="BuiltIn">
+<arg>msg=Button Not Found</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-08-21T14:19:23.764903" elapsed="0.001420"/>
+</kw>
+<status status="NOT RUN" start="2025-08-21T14:19:23.743519" elapsed="0.022804"/>
+</branch>
+<status status="PASS" start="2025-08-21T14:19:23.630804" elapsed="0.135519"/>
+</if>
+<doc>Owner : Danai Lertkamjornwat
+|     ***| Description |***
+|     Keyword เลือก Insurance Type
+--------------------------------------------------------------------------
+|     ***| Optional Parameter |***
+|     $timeout    : เวลา Wait Element (ค่า default = 15)
+--------------------------------------------------------------------------
+|     ***| Examples of use |***
+|     Click Like This Plan Button     🗂️ ใช้ภายในไฟล์
+|     BenefitsPage.Click Like This Plan Button   🌐 ใช้ภายนอกไฟล์
+==&gt;</doc>
+<status status="PASS" start="2025-08-21T14:19:23.474174" elapsed="0.292149"/>
+</kw>
+<kw name="Click Car Information" owner="InformationPage">
+<kw name="_Set Test Local Variables" owner="InformationPage" type="SETUP">
+<variable name="${_TIMEOUT_RETURN_STATUS}" scope="test">
+<msg time="2025-08-21T14:19:23.775455" level="INFO">${_TIMEOUT_RETURN_STATUS} = 3</msg>
+<var>${Time_Out.Return_Status}</var>
+<status status="PASS" start="2025-08-21T14:19:23.773988" elapsed="0.001467"/>
+</variable>
+<variable name="${_TIMEOUT_RETURN_STATUS_MEDIUM}" scope="test">
+<msg time="2025-08-21T14:19:23.776463" level="INFO">${_TIMEOUT_RETURN_STATUS_MEDIUM} = 10</msg>
+<var>${Time_Out.Return_Status_Medium}</var>
+<status status="PASS" start="2025-08-21T14:19:23.775455" elapsed="0.001008"/>
+</variable>
+<variable name="${_TIMEOUT_RETURN_STATUS_QUICK}" scope="test">
+<msg time="2025-08-21T14:19:23.777467" level="INFO">${_TIMEOUT_RETURN_STATUS_QUICK} = 1</msg>
+<var>${Time_Out.Return_Status_Quick}</var>
+<status status="PASS" start="2025-08-21T14:19:23.776463" elapsed="0.001004"/>
+</variable>
+<variable name="${_TIMEOUT_LONG}" scope="test">
+<msg time="2025-08-21T14:19:23.778464" level="INFO">${_TIMEOUT_LONG} = 60</msg>
+<var>${Time_Out.Long}</var>
+<status status="PASS" start="2025-08-21T14:19:23.777467" elapsed="0.000997"/>
+</variable>
+<variable name="${_TIMEOUT_DEFAULT}" scope="test">
+<msg time="2025-08-21T14:19:23.779463" level="INFO">${_TIMEOUT_DEFAULT} = 15</msg>
+<var>${Time_Out.Default}</var>
+<status status="PASS" start="2025-08-21T14:19:23.778464" elapsed="0.000999"/>
+</variable>
+<variable name="${_BTN_CAR_INFORMATION}" scope="test">
+<msg time="2025-08-21T14:19:23.780464" level="INFO">${_BTN_CAR_INFORMATION} = xpath=//div[text()='ข้อมูลรถที่เอาประกัน']</msg>
+<var>${Xpath.Information.btnCarInformation}</var>
+<status status="PASS" start="2025-08-21T14:19:23.780464" elapsed="0.000000"/>
+</variable>
+<variable name="${_BTN_BRAND}" scope="test">
+<msg time="2025-08-21T14:19:23.781698" level="INFO">${_BTN_BRAND} = xpath=//div[text()='กรุณาเลือกยี่ห้อ']</msg>
+<var>${Xpath.Information.CarPopup.btnBrand}</var>
+<status status="PASS" start="2025-08-21T14:19:23.780464" elapsed="0.002235"/>
+</variable>
+<variable name="${_RADIO_BRAND}" scope="test">
+<msg time="2025-08-21T14:19:23.782699" level="INFO">${_RADIO_BRAND} = xpath=//li[text()='Audi']</msg>
+<var>${Xpath.Information.CarPopup.radioBrand}</var>
+<status status="PASS" start="2025-08-21T14:19:23.782699" elapsed="0.000997"/>
+</variable>
+<variable name="${_BTN_MODEL}" scope="test">
+<msg time="2025-08-21T14:19:23.783696" level="INFO">${_BTN_MODEL} = xpath=//div[text()='กรุณาเลือกรุ่น']</msg>
+<var>${Xpath.Information.CarPopup.btnModel}</var>
+<status status="PASS" start="2025-08-21T14:19:23.783696" elapsed="0.001001"/>
+</variable>
+<variable name="${_RADIO_MODEL}" scope="test">
+<msg time="2025-08-21T14:19:23.784697" level="INFO">${_RADIO_MODEL} = xpath=//li[text()='A5']</msg>
+<var>${Xpath.Information.CarPopup.radioModel}</var>
+<status status="PASS" start="2025-08-21T14:19:23.784697" elapsed="0.000000"/>
+</variable>
+<variable name="${_BTN_YEAR_OF_REGISTRATION}" scope="test">
+<msg time="2025-08-21T14:19:23.785696" level="INFO">${_BTN_YEAR_OF_REGISTRATION} = xpath=//div[text()='กรุณาเลือกปีจดทะเบียน']</msg>
+<var>${Xpath.Information.CarPopup.btnYearOfRegistration}</var>
+<status status="PASS" start="2025-08-21T14:19:23.785696" elapsed="0.001004"/>
+</variable>
+<variable name="${_RADIO_YEAR_OF_REGISTRATION}" scope="test">
+<msg time="2025-08-21T14:19:23.787822" level="INFO">${_RADIO_YEAR_OF_REGISTRATION} = xpath=//li[text()='2567 (2024)']</msg>
+<var>${Xpath.Information.CarPopup.radioYearOfRegistration}</var>
+<status status="PASS" start="2025-08-21T14:19:23.786700" elapsed="0.002139"/>
+</variable>
+<variable name="${_LBL_VEHICLE_NUMBER}" scope="test">
+<msg time="2025-08-21T14:19:23.790375" level="INFO">${_LBL_VEHICLE_NUMBER} = xpath=//input[@id=':rc:' and @type='text']</msg>
+<var>${Xpath.Information.CarPopup.lblVehicleNumber}</var>
+<status status="PASS" start="2025-08-21T14:19:23.789361" elapsed="0.001014"/>
+</variable>
+<variable name="${_BTN_CAR_COLOR}" scope="test">
+<msg time="2025-08-21T14:19:23.791393" level="INFO">${_BTN_CAR_COLOR} = xpath=//div[text()='กรุณาเลือกสีรถ']</msg>
+<var>${Xpath.Information.CarPopup.btnCarColor}</var>
+<status status="PASS" start="2025-08-21T14:19:23.790375" elapsed="0.002114"/>
+</variable>
+<variable name="${_RADIO_CAR_COLOR}" scope="test">
+<msg time="2025-08-21T14:19:23.793531" level="INFO">${_RADIO_CAR_COLOR} = xpath=//li[text()='ขาว']</msg>
+<var>${Xpath.Information.CarPopup.radioCarColor}</var>
+<status status="PASS" start="2025-08-21T14:19:23.792489" elapsed="0.002007"/>
+</variable>
+<variable name="${_LBL_ENGINE_SIZE}" scope="test">
+<msg time="2025-08-21T14:19:23.794496" level="INFO">${_LBL_ENGINE_SIZE} = xpath=//input[@id=':rh:' and @type='text']</msg>
+<var>${Xpath.Information.CarPopup.lblEngineSize}</var>
+<status status="PASS" start="2025-08-21T14:19:23.794496" elapsed="0.001004"/>
+</variable>
+<variable name="${_LBL_VEHICLE_REGISTRATION_NUMBER}" scope="test">
+<msg time="2025-08-21T14:19:23.796502" level="INFO">${_LBL_VEHICLE_REGISTRATION_NUMBER} = xpath=//input[@id=':rk:' and @type='text']</msg>
+<var>${Xpath.Information.CarPopup.lblVehicleRegistrationNumber}</var>
+<status status="PASS" start="2025-08-21T14:19:23.795500" elapsed="0.001002"/>
+</variable>
+<variable name="${_BTN_PROVINCE}" scope="test">
+<msg time="2025-08-21T14:19:23.797500" level="INFO">${_BTN_PROVINCE} = xpath=//div[text()='กรุณาเลือกจังหวัด']</msg>
+<var>${Xpath.Information.CarPopup.btnProVince}</var>
+<status status="PASS" start="2025-08-21T14:19:23.796502" elapsed="0.000998"/>
+</variable>
+<variable name="${_RADIO_PROVINCE}" scope="test">
+<msg time="2025-08-21T14:19:23.798499" level="INFO">${_RADIO_PROVINCE} = xpath=//li[text()='กรุงเทพมหานคร']</msg>
+<var>${Xpath.Information.CarPopup.radioProVince}</var>
+<status status="PASS" start="2025-08-21T14:19:23.797500" elapsed="0.000999"/>
+</variable>
+<variable name="${_BTN_DAY}" scope="test">
+<msg time="2025-08-21T14:19:23.799498" level="INFO">${_BTN_DAY} = xpath=//div[text()='วว']</msg>
+<var>${Xpath.Information.CarPopup.btnDay}</var>
+<status status="PASS" start="2025-08-21T14:19:23.799498" elapsed="0.001560"/>
+</variable>
+<variable name="${_RADIO_DAY}" scope="test">
+<msg time="2025-08-21T14:19:23.802059" level="INFO">${_RADIO_DAY} = xpath=//li[text()='01']</msg>
+<var>${Xpath.Information.CarPopup.radioDay}</var>
+<status status="PASS" start="2025-08-21T14:19:23.801058" elapsed="0.001001"/>
+</variable>
+<variable name="${_BTN_MOUNT}" scope="test">
+<msg time="2025-08-21T14:19:23.804057" level="INFO">${_BTN_MOUNT} = xpath=//div[text()='ดด']</msg>
+<var>${Xpath.Information.CarPopup.btnMount}</var>
+<status status="PASS" start="2025-08-21T14:19:23.802059" elapsed="0.001998"/>
+</variable>
+<variable name="${_RADIO_MOUNT}" scope="test">
+<msg time="2025-08-21T14:19:23.806059" level="INFO">${_RADIO_MOUNT} = xpath=//li[text()='09']</msg>
+<var>${Xpath.Information.CarPopup.radioMount}</var>
+<status status="PASS" start="2025-08-21T14:19:23.804057" elapsed="0.002002"/>
+</variable>
+<variable name="${_BTN_YEAR}" scope="test">
+<msg time="2025-08-21T14:19:23.808608" level="INFO">${_BTN_YEAR} = xpath=//div[text()='ปปปป']</msg>
+<var>${Xpath.Information.CarPopup.btnYear}</var>
+<status status="PASS" start="2025-08-21T14:19:23.807585" elapsed="0.002026"/>
+</variable>
+<variable name="${_RADIO_YEAR}" scope="test">
+<msg time="2025-08-21T14:19:23.810633" level="INFO">${_RADIO_YEAR} = xpath=//li[text()='2568']</msg>
+<var>${Xpath.Information.CarPopup.radioYear}</var>
+<status status="PASS" start="2025-08-21T14:19:23.809611" elapsed="0.001022"/>
+</variable>
+<variable name="${_BTN_SUBMIT}" scope="test">
+<msg time="2025-08-21T14:19:23.858774" level="INFO">${_BTN_SUBMIT} = xpath=//button[@type="submit"]</msg>
+<var>${Xpath.Information.CarPopup.btnSubmit}</var>
+<status status="PASS" start="2025-08-21T14:19:23.810633" elapsed="0.048141"/>
+</variable>
+<variable name="${_BTN_OWNER_INFORMATION}" scope="test">
+<msg time="2025-08-21T14:19:23.894939" level="INFO">${_BTN_OWNER_INFORMATION} = xpath=//div[text()='ข้อมูลเจ้าของกรมธรรม์']</msg>
+<var>${Xpath.Information.btnOwnerInformation}</var>
+<status status="PASS" start="2025-08-21T14:19:23.893439" elapsed="0.002519"/>
+</variable>
+<variable name="${_BTN_PREFIX}" scope="test">
+<msg time="2025-08-21T14:19:23.895958" level="INFO">${_BTN_PREFIX} = xpath=//div[text()='กรุณาระบุคำนำหน้าชื่อ']</msg>
+<var>${Xpath.Information.OwnerPopup.btnPrefix}</var>
+<status status="PASS" start="2025-08-21T14:19:23.895958" elapsed="0.002306"/>
+</variable>
+<variable name="${_RADIO_PREFIX}" scope="test">
+<msg time="2025-08-21T14:19:23.899261" level="INFO">${_RADIO_PREFIX} = xpath=//li[text()='นาย']</msg>
+<var>${Xpath.Information.OwnerPopup.radioPrefix}</var>
+<status status="PASS" start="2025-08-21T14:19:23.898264" elapsed="0.000997"/>
+</variable>
+<variable name="${_LBL_FRIST_NAME}" scope="test">
+<msg time="2025-08-21T14:19:23.900769" level="INFO">${_LBL_FRIST_NAME} = xpath=//input[@id=':r11:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblFristName}</var>
+<status status="PASS" start="2025-08-21T14:19:23.899261" elapsed="0.001508"/>
+</variable>
+<variable name="${_LBL_LAST_NAME}" scope="test">
+<msg time="2025-08-21T14:19:23.901777" level="INFO">${_LBL_LAST_NAME} = xpath=//input[@id=':r14:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblLastName}</var>
+<status status="PASS" start="2025-08-21T14:19:23.900769" elapsed="0.001008"/>
+</variable>
+<variable name="${_BTN_OWNER_DAY}" scope="test">
+<msg time="2025-08-21T14:19:23.902776" level="INFO">${_BTN_OWNER_DAY} = xpath=//div[text()='วว']</msg>
+<var>${Xpath.Information.OwnerPopup.btnDay}</var>
+<status status="PASS" start="2025-08-21T14:19:23.901777" elapsed="0.000999"/>
+</variable>
+<variable name="${_RADIO_OWNER_DAY}" scope="test">
+<msg time="2025-08-21T14:19:23.903778" level="INFO">${_RADIO_OWNER_DAY} = xpath=//li[text()='01']</msg>
+<var>${Xpath.Information.OwnerPopup.radioDay}</var>
+<status status="PASS" start="2025-08-21T14:19:23.902776" elapsed="0.002008"/>
+</variable>
+<variable name="${_BTN_OWNER_MOUNT}" scope="test">
+<msg time="2025-08-21T14:19:23.907781" level="INFO">${_BTN_OWNER_MOUNT} = xpath=//div[text()='ดด']</msg>
+<var>${Xpath.Information.OwnerPopup.btnMount}</var>
+<status status="PASS" start="2025-08-21T14:19:23.904784" elapsed="0.002997"/>
+</variable>
+<variable name="${_RADIO_OWNER_MOUNT}" scope="test">
+<msg time="2025-08-21T14:19:23.908789" level="INFO">${_RADIO_OWNER_MOUNT} = xpath=//li[text()='06']</msg>
+<var>${Xpath.Information.OwnerPopup.radioMount}</var>
+<status status="PASS" start="2025-08-21T14:19:23.907781" elapsed="0.001008"/>
+</variable>
+<variable name="${_BTN_OWNER_YEAR}" scope="test">
+<msg time="2025-08-21T14:19:23.909790" level="INFO">${_BTN_OWNER_YEAR} = xpath=//div[text()='ปปปป']</msg>
+<var>${Xpath.Information.OwnerPopup.btnYear}</var>
+<status status="PASS" start="2025-08-21T14:19:23.908789" elapsed="0.002000"/>
+</variable>
+<variable name="${_RADIO_OWNER_YEAR}" scope="test">
+<msg time="2025-08-21T14:19:23.911294" level="INFO">${_RADIO_OWNER_YEAR} = xpath=//li[text()='2546']</msg>
+<var>${Xpath.Information.OwnerPopup.radioYear}</var>
+<status status="PASS" start="2025-08-21T14:19:23.910789" elapsed="0.042183"/>
+</variable>
+<variable name="${_LBL_ID_CARD}" scope="test">
+<msg time="2025-08-21T14:19:23.957402" level="INFO">${_LBL_ID_CARD} = xpath=//input[@id=':r1d:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblIDCard}</var>
+<status status="PASS" start="2025-08-21T14:19:23.955442" elapsed="0.003161"/>
+</variable>
+<variable name="${_LBL_ADDRESS_ID_CRAD}" scope="test">
+<msg time="2025-08-21T14:19:23.959602" level="INFO">${_LBL_ADDRESS_ID_CRAD} = xpath=//input[@id=':r1g:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblAddressIDCard}</var>
+<status status="PASS" start="2025-08-21T14:19:23.958603" elapsed="0.000999"/>
+</variable>
+<variable name="${_LBL_ZIP_CODE}" scope="test">
+<msg time="2025-08-21T14:19:23.960603" level="INFO">${_LBL_ZIP_CODE} = xpath=//input[@id=':r1j:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblZipCode}</var>
+<status status="PASS" start="2025-08-21T14:19:23.959602" elapsed="0.001001"/>
+</variable>
+<variable name="${_LBL_OWNER_PROVICE}" scope="test">
+<msg time="2025-08-21T14:19:23.961657" level="INFO">${_LBL_OWNER_PROVICE} = xpath=//input[@id=':r1l:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblProvice}</var>
+<status status="PASS" start="2025-08-21T14:19:23.961657" elapsed="0.001003"/>
+</variable>
+<variable name="${_LBL_COUNTY}" scope="test">
+<msg time="2025-08-21T14:19:23.962660" level="INFO">${_LBL_COUNTY} = xpath=//input[@id=':r1n:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblCounty}</var>
+<status status="PASS" start="2025-08-21T14:19:23.962660" elapsed="0.000999"/>
+</variable>
+<variable name="${_LBL_DISTRICT}" scope="test">
+<msg time="2025-08-21T14:19:23.964656" level="INFO">${_LBL_DISTRICT} = xpath=//input[@id=':r1p:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblDistrict}</var>
+<status status="PASS" start="2025-08-21T14:19:23.963659" elapsed="0.000997"/>
+</variable>
+<variable name="${_LBL_EMAIL}" scope="test">
+<msg time="2025-08-21T14:19:23.965677" level="INFO">${_LBL_EMAIL} = xpath=//input[@id=':r1r:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblEmail}</var>
+<status status="PASS" start="2025-08-21T14:19:23.964656" elapsed="0.001021"/>
+</variable>
+<variable name="${_LBL_CONFIRM_EMAIL}" scope="test">
+<msg time="2025-08-21T14:19:23.966658" level="INFO">${_LBL_CONFIRM_EMAIL} = xpath=//input[@name="confirmEmail"]</msg>
+<var>${Xpath.Information.OwnerPopup.lblConfirmEmail}</var>
+<status status="PASS" start="2025-08-21T14:19:23.965677" elapsed="0.000981"/>
+</variable>
+<variable name="${_LBL_PHONE}" scope="test">
+<msg time="2025-08-21T14:19:23.967656" level="INFO">${_LBL_PHONE} = xpath=//input[@id=':r1u:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblPhone}</var>
+<status status="PASS" start="2025-08-21T14:19:23.966658" elapsed="0.000998"/>
+</variable>
+<variable name="${_BTN_OWNER_SUBMIT}" scope="test">
+<msg time="2025-08-21T14:19:23.968656" level="INFO">${_BTN_OWNER_SUBMIT} = xpath=//button[@type="submit"]</msg>
+<var>${Xpath.Information.OwnerPopup.btnSubmit}</var>
+<status status="PASS" start="2025-08-21T14:19:23.967656" elapsed="0.001000"/>
+</variable>
+<variable name="${_BTN_MAIN_SUBMIT}" scope="test">
+<msg time="2025-08-21T14:19:23.969658" level="INFO">${_BTN_MAIN_SUBMIT} = xpath=//button[text()='ดำเนินการต่อ']</msg>
+<var>${Xpath.Information.btnSubmit}</var>
+<status status="PASS" start="2025-08-21T14:19:23.968656" elapsed="0.001002"/>
+</variable>
+<variable name="${_BTN_NEXT}" scope="test">
+<msg time="2025-08-21T14:19:23.970659" level="INFO">${_BTN_NEXT} = xpath=//button[text()='ถัดไป']</msg>
+<var>${Xpath.Information.btnNext}</var>
+<status status="PASS" start="2025-08-21T14:19:23.969658" elapsed="0.001001"/>
+</variable>
+<tag>robot:private</tag>
+<doc>เตรียมตัวแปรสำหรับใช้งานในแต่ละ Keywords</doc>
+<status status="PASS" start="2025-08-21T14:19:23.773146" elapsed="0.197513"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${_BTN_CAR_INFORMATION}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-21T14:19:23.971757" elapsed="0.066039"/>
+</kw>
+<msg time="2025-08-21T14:19:24.038806" level="INFO">${Status} = True</msg>
+<var>${Status}</var>
+<arg>SeleniumLibrary.Wait Until Element Is Visible</arg>
+<arg>${_BTN_CAR_INFORMATION}</arg>
+<arg>${timeout}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-08-21T14:19:23.971757" elapsed="0.067049"/>
+</kw>
+<if>
+<branch type="IF" condition="${Status}">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:24.095890" level="INFO">Clicking element 'xpath=//div[text()='ข้อมูลรถที่เอาประกัน']'.</msg>
+<arg>${_BTN_CAR_INFORMATION}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:24.039806" elapsed="0.234655"/>
+</kw>
+<status status="PASS" start="2025-08-21T14:19:24.039806" elapsed="0.234655"/>
+</branch>
+<branch type="ELSE">
+<kw name="Fail" owner="BuiltIn">
+<arg>msg=Button Not Found</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-08-21T14:19:24.275461" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-08-21T14:19:24.274461" elapsed="0.001000"/>
+</branch>
+<status status="PASS" start="2025-08-21T14:19:24.038806" elapsed="0.236655"/>
+</if>
+<doc>Owner : Danai Lertkamjornwat
+|     ***| Description |***
+|     Keyword เลือก Insurance Type
+--------------------------------------------------------------------------
+|     ***| Optional Parameter |***
+|     $timeout    : เวลา Wait Element (ค่า default = 15)
+--------------------------------------------------------------------------
+|     ***| Examples of use |***
+|     Click Car Information     🗂️ ใช้ภายในไฟล์
+|     InformationPage.Click Car Information   🌐 ใช้ภายนอกไฟล์
+==&gt;</doc>
+<status status="PASS" start="2025-08-21T14:19:23.769560" elapsed="0.505901"/>
+</kw>
+<kw name="Input Field Car Information Popup" owner="InformationPage">
+<kw name="_Set Test Local Variables" owner="InformationPage" type="SETUP">
+<variable name="${_TIMEOUT_RETURN_STATUS}" scope="test">
+<msg time="2025-08-21T14:19:24.297935" level="INFO">${_TIMEOUT_RETURN_STATUS} = 3</msg>
+<var>${Time_Out.Return_Status}</var>
+<status status="PASS" start="2025-08-21T14:19:24.294345" elapsed="0.003590"/>
+</variable>
+<variable name="${_TIMEOUT_RETURN_STATUS_MEDIUM}" scope="test">
+<msg time="2025-08-21T14:19:24.299012" level="INFO">${_TIMEOUT_RETURN_STATUS_MEDIUM} = 10</msg>
+<var>${Time_Out.Return_Status_Medium}</var>
+<status status="PASS" start="2025-08-21T14:19:24.297935" elapsed="0.001077"/>
+</variable>
+<variable name="${_TIMEOUT_RETURN_STATUS_QUICK}" scope="test">
+<msg time="2025-08-21T14:19:24.300584" level="INFO">${_TIMEOUT_RETURN_STATUS_QUICK} = 1</msg>
+<var>${Time_Out.Return_Status_Quick}</var>
+<status status="PASS" start="2025-08-21T14:19:24.299012" elapsed="0.003646"/>
+</variable>
+<variable name="${_TIMEOUT_LONG}" scope="test">
+<msg time="2025-08-21T14:19:24.309642" level="INFO">${_TIMEOUT_LONG} = 60</msg>
+<var>${Time_Out.Long}</var>
+<status status="PASS" start="2025-08-21T14:19:24.302658" elapsed="0.006984"/>
+</variable>
+<variable name="${_TIMEOUT_DEFAULT}" scope="test">
+<msg time="2025-08-21T14:19:24.312318" level="INFO">${_TIMEOUT_DEFAULT} = 15</msg>
+<var>${Time_Out.Default}</var>
+<status status="PASS" start="2025-08-21T14:19:24.309642" elapsed="0.002676"/>
+</variable>
+<variable name="${_BTN_CAR_INFORMATION}" scope="test">
+<msg time="2025-08-21T14:19:24.313283" level="INFO">${_BTN_CAR_INFORMATION} = xpath=//div[text()='ข้อมูลรถที่เอาประกัน']</msg>
+<var>${Xpath.Information.btnCarInformation}</var>
+<status status="PASS" start="2025-08-21T14:19:24.313283" elapsed="0.001015"/>
+</variable>
+<variable name="${_BTN_BRAND}" scope="test">
+<msg time="2025-08-21T14:19:24.314298" level="INFO">${_BTN_BRAND} = xpath=//div[text()='กรุณาเลือกยี่ห้อ']</msg>
+<var>${Xpath.Information.CarPopup.btnBrand}</var>
+<status status="PASS" start="2025-08-21T14:19:24.314298" elapsed="0.001050"/>
+</variable>
+<variable name="${_RADIO_BRAND}" scope="test">
+<msg time="2025-08-21T14:19:24.346082" level="INFO">${_RADIO_BRAND} = xpath=//li[text()='Audi']</msg>
+<var>${Xpath.Information.CarPopup.radioBrand}</var>
+<status status="PASS" start="2025-08-21T14:19:24.345083" elapsed="0.000999"/>
+</variable>
+<variable name="${_BTN_MODEL}" scope="test">
+<msg time="2025-08-21T14:19:24.347630" level="INFO">${_BTN_MODEL} = xpath=//div[text()='กรุณาเลือกรุ่น']</msg>
+<var>${Xpath.Information.CarPopup.btnModel}</var>
+<status status="PASS" start="2025-08-21T14:19:24.346082" elapsed="0.001548"/>
+</variable>
+<variable name="${_RADIO_MODEL}" scope="test">
+<msg time="2025-08-21T14:19:24.348679" level="INFO">${_RADIO_MODEL} = xpath=//li[text()='A5']</msg>
+<var>${Xpath.Information.CarPopup.radioModel}</var>
+<status status="PASS" start="2025-08-21T14:19:24.347630" elapsed="0.001049"/>
+</variable>
+<variable name="${_BTN_YEAR_OF_REGISTRATION}" scope="test">
+<msg time="2025-08-21T14:19:24.348679" level="INFO">${_BTN_YEAR_OF_REGISTRATION} = xpath=//div[text()='กรุณาเลือกปีจดทะเบียน']</msg>
+<var>${Xpath.Information.CarPopup.btnYearOfRegistration}</var>
+<status status="PASS" start="2025-08-21T14:19:24.348679" elapsed="0.000999"/>
+</variable>
+<variable name="${_RADIO_YEAR_OF_REGISTRATION}" scope="test">
+<msg time="2025-08-21T14:19:24.349678" level="INFO">${_RADIO_YEAR_OF_REGISTRATION} = xpath=//li[text()='2567 (2024)']</msg>
+<var>${Xpath.Information.CarPopup.radioYearOfRegistration}</var>
+<status status="PASS" start="2025-08-21T14:19:24.349678" elapsed="0.000000"/>
+</variable>
+<variable name="${_LBL_VEHICLE_NUMBER}" scope="test">
+<msg time="2025-08-21T14:19:24.351209" level="INFO">${_LBL_VEHICLE_NUMBER} = xpath=//input[@id=':rc:' and @type='text']</msg>
+<var>${Xpath.Information.CarPopup.lblVehicleNumber}</var>
+<status status="PASS" start="2025-08-21T14:19:24.350666" elapsed="0.000543"/>
+</variable>
+<variable name="${_BTN_CAR_COLOR}" scope="test">
+<msg time="2025-08-21T14:19:24.352246" level="INFO">${_BTN_CAR_COLOR} = xpath=//div[text()='กรุณาเลือกสีรถ']</msg>
+<var>${Xpath.Information.CarPopup.btnCarColor}</var>
+<status status="PASS" start="2025-08-21T14:19:24.351209" elapsed="0.001037"/>
+</variable>
+<variable name="${_RADIO_CAR_COLOR}" scope="test">
+<msg time="2025-08-21T14:19:24.352246" level="INFO">${_RADIO_CAR_COLOR} = xpath=//li[text()='ขาว']</msg>
+<var>${Xpath.Information.CarPopup.radioCarColor}</var>
+<status status="PASS" start="2025-08-21T14:19:24.352246" elapsed="0.001039"/>
+</variable>
+<variable name="${_LBL_ENGINE_SIZE}" scope="test">
+<msg time="2025-08-21T14:19:24.356257" level="INFO">${_LBL_ENGINE_SIZE} = xpath=//input[@id=':rh:' and @type='text']</msg>
+<var>${Xpath.Information.CarPopup.lblEngineSize}</var>
+<status status="PASS" start="2025-08-21T14:19:24.353285" elapsed="0.005623"/>
+</variable>
+<variable name="${_LBL_VEHICLE_REGISTRATION_NUMBER}" scope="test">
+<msg time="2025-08-21T14:19:24.391612" level="INFO">${_LBL_VEHICLE_REGISTRATION_NUMBER} = xpath=//input[@id=':rk:' and @type='text']</msg>
+<var>${Xpath.Information.CarPopup.lblVehicleRegistrationNumber}</var>
+<status status="PASS" start="2025-08-21T14:19:24.360485" elapsed="0.034183"/>
+</variable>
+<variable name="${_BTN_PROVINCE}" scope="test">
+<msg time="2025-08-21T14:19:24.395614" level="INFO">${_BTN_PROVINCE} = xpath=//div[text()='กรุณาเลือกจังหวัด']</msg>
+<var>${Xpath.Information.CarPopup.btnProVince}</var>
+<status status="PASS" start="2025-08-21T14:19:24.394668" elapsed="0.000946"/>
+</variable>
+<variable name="${_RADIO_PROVINCE}" scope="test">
+<msg time="2025-08-21T14:19:24.396646" level="INFO">${_RADIO_PROVINCE} = xpath=//li[text()='กรุงเทพมหานคร']</msg>
+<var>${Xpath.Information.CarPopup.radioProVince}</var>
+<status status="PASS" start="2025-08-21T14:19:24.395614" elapsed="0.002014"/>
+</variable>
+<variable name="${_BTN_DAY}" scope="test">
+<msg time="2025-08-21T14:19:24.398612" level="INFO">${_BTN_DAY} = xpath=//div[text()='วว']</msg>
+<var>${Xpath.Information.CarPopup.btnDay}</var>
+<status status="PASS" start="2025-08-21T14:19:24.397628" elapsed="0.000984"/>
+</variable>
+<variable name="${_RADIO_DAY}" scope="test">
+<msg time="2025-08-21T14:19:24.399623" level="INFO">${_RADIO_DAY} = xpath=//li[text()='01']</msg>
+<var>${Xpath.Information.CarPopup.radioDay}</var>
+<status status="PASS" start="2025-08-21T14:19:24.398612" elapsed="0.001011"/>
+</variable>
+<variable name="${_BTN_MOUNT}" scope="test">
+<msg time="2025-08-21T14:19:24.400604" level="INFO">${_BTN_MOUNT} = xpath=//div[text()='ดด']</msg>
+<var>${Xpath.Information.CarPopup.btnMount}</var>
+<status status="PASS" start="2025-08-21T14:19:24.399623" elapsed="0.001531"/>
+</variable>
+<variable name="${_RADIO_MOUNT}" scope="test">
+<msg time="2025-08-21T14:19:24.401154" level="INFO">${_RADIO_MOUNT} = xpath=//li[text()='09']</msg>
+<var>${Xpath.Information.CarPopup.radioMount}</var>
+<status status="PASS" start="2025-08-21T14:19:24.401154" elapsed="0.001041"/>
+</variable>
+<variable name="${_BTN_YEAR}" scope="test">
+<msg time="2025-08-21T14:19:24.402195" level="INFO">${_BTN_YEAR} = xpath=//div[text()='ปปปป']</msg>
+<var>${Xpath.Information.CarPopup.btnYear}</var>
+<status status="PASS" start="2025-08-21T14:19:24.402195" elapsed="0.001038"/>
+</variable>
+<variable name="${_RADIO_YEAR}" scope="test">
+<msg time="2025-08-21T14:19:24.405203" level="INFO">${_RADIO_YEAR} = xpath=//li[text()='2568']</msg>
+<var>${Xpath.Information.CarPopup.radioYear}</var>
+<status status="PASS" start="2025-08-21T14:19:24.403233" elapsed="0.002964"/>
+</variable>
+<variable name="${_BTN_SUBMIT}" scope="test">
+<msg time="2025-08-21T14:19:24.408809" level="INFO">${_BTN_SUBMIT} = xpath=//button[@type="submit"]</msg>
+<var>${Xpath.Information.CarPopup.btnSubmit}</var>
+<status status="PASS" start="2025-08-21T14:19:24.406197" elapsed="0.003616"/>
+</variable>
+<variable name="${_BTN_OWNER_INFORMATION}" scope="test">
+<msg time="2025-08-21T14:19:24.414487" level="INFO">${_BTN_OWNER_INFORMATION} = xpath=//div[text()='ข้อมูลเจ้าของกรมธรรม์']</msg>
+<var>${Xpath.Information.btnOwnerInformation}</var>
+<status status="PASS" start="2025-08-21T14:19:24.409813" elapsed="0.004674"/>
+</variable>
+<variable name="${_BTN_PREFIX}" scope="test">
+<msg time="2025-08-21T14:19:24.416443" level="INFO">${_BTN_PREFIX} = xpath=//div[text()='กรุณาระบุคำนำหน้าชื่อ']</msg>
+<var>${Xpath.Information.OwnerPopup.btnPrefix}</var>
+<status status="PASS" start="2025-08-21T14:19:24.415466" elapsed="0.000977"/>
+</variable>
+<variable name="${_RADIO_PREFIX}" scope="test">
+<msg time="2025-08-21T14:19:24.448409" level="INFO">${_RADIO_PREFIX} = xpath=//li[text()='นาย']</msg>
+<var>${Xpath.Information.OwnerPopup.radioPrefix}</var>
+<status status="PASS" start="2025-08-21T14:19:24.416443" elapsed="0.032969"/>
+</variable>
+<variable name="${_LBL_FRIST_NAME}" scope="test">
+<msg time="2025-08-21T14:19:24.450961" level="INFO">${_LBL_FRIST_NAME} = xpath=//input[@id=':r11:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblFristName}</var>
+<status status="PASS" start="2025-08-21T14:19:24.449412" elapsed="0.002597"/>
+</variable>
+<variable name="${_LBL_LAST_NAME}" scope="test">
+<msg time="2025-08-21T14:19:24.454004" level="INFO">${_LBL_LAST_NAME} = xpath=//input[@id=':r14:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblLastName}</var>
+<status status="PASS" start="2025-08-21T14:19:24.452009" elapsed="0.003008"/>
+</variable>
+<variable name="${_BTN_OWNER_DAY}" scope="test">
+<msg time="2025-08-21T14:19:24.457559" level="INFO">${_BTN_OWNER_DAY} = xpath=//div[text()='วว']</msg>
+<var>${Xpath.Information.OwnerPopup.btnDay}</var>
+<status status="PASS" start="2025-08-21T14:19:24.456013" elapsed="0.001546"/>
+</variable>
+<variable name="${_RADIO_OWNER_DAY}" scope="test">
+<msg time="2025-08-21T14:19:24.458624" level="INFO">${_RADIO_OWNER_DAY} = xpath=//li[text()='01']</msg>
+<var>${Xpath.Information.OwnerPopup.radioDay}</var>
+<status status="PASS" start="2025-08-21T14:19:24.457559" elapsed="0.001065"/>
+</variable>
+<variable name="${_BTN_OWNER_MOUNT}" scope="test">
+<msg time="2025-08-21T14:19:24.459666" level="INFO">${_BTN_OWNER_MOUNT} = xpath=//div[text()='ดด']</msg>
+<var>${Xpath.Information.OwnerPopup.btnMount}</var>
+<status status="PASS" start="2025-08-21T14:19:24.458624" elapsed="0.002052"/>
+</variable>
+<variable name="${_RADIO_OWNER_MOUNT}" scope="test">
+<msg time="2025-08-21T14:19:24.461227" level="INFO">${_RADIO_OWNER_MOUNT} = xpath=//li[text()='06']</msg>
+<var>${Xpath.Information.OwnerPopup.radioMount}</var>
+<status status="PASS" start="2025-08-21T14:19:24.460676" elapsed="0.000551"/>
+</variable>
+<variable name="${_BTN_OWNER_YEAR}" scope="test">
+<msg time="2025-08-21T14:19:24.462267" level="INFO">${_BTN_OWNER_YEAR} = xpath=//div[text()='ปปปป']</msg>
+<var>${Xpath.Information.OwnerPopup.btnYear}</var>
+<status status="PASS" start="2025-08-21T14:19:24.461227" elapsed="0.002039"/>
+</variable>
+<variable name="${_RADIO_OWNER_YEAR}" scope="test">
+<msg time="2025-08-21T14:19:24.465264" level="INFO">${_RADIO_OWNER_YEAR} = xpath=//li[text()='2546']</msg>
+<var>${Xpath.Information.OwnerPopup.radioYear}</var>
+<status status="PASS" start="2025-08-21T14:19:24.464281" elapsed="0.003567"/>
+</variable>
+<variable name="${_LBL_ID_CARD}" scope="test">
+<msg time="2025-08-21T14:19:24.476592" level="INFO">${_LBL_ID_CARD} = xpath=//input[@id=':r1d:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblIDCard}</var>
+<status status="PASS" start="2025-08-21T14:19:24.468924" elapsed="0.007668"/>
+</variable>
+<variable name="${_LBL_ADDRESS_ID_CRAD}" scope="test">
+<msg time="2025-08-21T14:19:24.508514" level="INFO">${_LBL_ADDRESS_ID_CRAD} = xpath=//input[@id=':r1g:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblAddressIDCard}</var>
+<status status="PASS" start="2025-08-21T14:19:24.477589" elapsed="0.031935"/>
+</variable>
+<variable name="${_LBL_ZIP_CODE}" scope="test">
+<msg time="2025-08-21T14:19:24.512551" level="INFO">${_LBL_ZIP_CODE} = xpath=//input[@id=':r1j:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblZipCode}</var>
+<status status="PASS" start="2025-08-21T14:19:24.511033" elapsed="0.001518"/>
+</variable>
+<variable name="${_LBL_OWNER_PROVICE}" scope="test">
+<msg time="2025-08-21T14:19:24.515549" level="INFO">${_LBL_OWNER_PROVICE} = xpath=//input[@id=':r1l:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblProvice}</var>
+<status status="PASS" start="2025-08-21T14:19:24.512551" elapsed="0.002998"/>
+</variable>
+<variable name="${_LBL_COUNTY}" scope="test">
+<msg time="2025-08-21T14:19:24.516548" level="INFO">${_LBL_COUNTY} = xpath=//input[@id=':r1n:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblCounty}</var>
+<status status="PASS" start="2025-08-21T14:19:24.515549" elapsed="0.002000"/>
+</variable>
+<variable name="${_LBL_DISTRICT}" scope="test">
+<msg time="2025-08-21T14:19:24.519060" level="INFO">${_LBL_DISTRICT} = xpath=//input[@id=':r1p:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblDistrict}</var>
+<status status="PASS" start="2025-08-21T14:19:24.517549" elapsed="0.002051"/>
+</variable>
+<variable name="${_LBL_EMAIL}" scope="test">
+<msg time="2025-08-21T14:19:24.523153" level="INFO">${_LBL_EMAIL} = xpath=//input[@id=':r1r:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblEmail}</var>
+<status status="PASS" start="2025-08-21T14:19:24.519600" elapsed="0.003553"/>
+</variable>
+<variable name="${_LBL_CONFIRM_EMAIL}" scope="test">
+<msg time="2025-08-21T14:19:24.525151" level="INFO">${_LBL_CONFIRM_EMAIL} = xpath=//input[@name="confirmEmail"]</msg>
+<var>${Xpath.Information.OwnerPopup.lblConfirmEmail}</var>
+<status status="PASS" start="2025-08-21T14:19:24.524154" elapsed="0.003513"/>
+</variable>
+<variable name="${_LBL_PHONE}" scope="test">
+<msg time="2025-08-21T14:19:24.528681" level="INFO">${_LBL_PHONE} = xpath=//input[@id=':r1u:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblPhone}</var>
+<status status="PASS" start="2025-08-21T14:19:24.527667" elapsed="0.001014"/>
+</variable>
+<variable name="${_BTN_OWNER_SUBMIT}" scope="test">
+<msg time="2025-08-21T14:19:24.530679" level="INFO">${_BTN_OWNER_SUBMIT} = xpath=//button[@type="submit"]</msg>
+<var>${Xpath.Information.OwnerPopup.btnSubmit}</var>
+<status status="PASS" start="2025-08-21T14:19:24.529684" elapsed="0.001503"/>
+</variable>
+<variable name="${_BTN_MAIN_SUBMIT}" scope="test">
+<msg time="2025-08-21T14:19:24.533208" level="INFO">${_BTN_MAIN_SUBMIT} = xpath=//button[text()='ดำเนินการต่อ']</msg>
+<var>${Xpath.Information.btnSubmit}</var>
+<status status="PASS" start="2025-08-21T14:19:24.532199" elapsed="0.001009"/>
+</variable>
+<variable name="${_BTN_NEXT}" scope="test">
+<msg time="2025-08-21T14:19:24.536217" level="INFO">${_BTN_NEXT} = xpath=//button[text()='ถัดไป']</msg>
+<var>${Xpath.Information.btnNext}</var>
+<status status="PASS" start="2025-08-21T14:19:24.534210" elapsed="0.002007"/>
+</variable>
+<tag>robot:private</tag>
+<doc>เตรียมตัวแปรสำหรับใช้งานในแต่ละ Keywords</doc>
+<status status="PASS" start="2025-08-21T14:19:24.289746" elapsed="0.246471"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${_BTN_BRAND}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-21T14:19:24.563354" elapsed="0.118811"/>
+</kw>
+<msg time="2025-08-21T14:19:24.682165" level="INFO">${Status} = True</msg>
+<var>${Status}</var>
+<arg>SeleniumLibrary.Wait Until Element Is Visible</arg>
+<arg>${_BTN_BRAND}</arg>
+<arg>${timeout}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-08-21T14:19:24.536217" elapsed="0.147033"/>
+</kw>
+<if>
+<branch type="IF" condition="${Status}">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:24.684263" level="INFO">Clicking element 'xpath=//div[text()='กรุณาเลือกยี่ห้อ']'.</msg>
+<arg>locator=${_BTN_BRAND}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:24.684263" elapsed="0.123387"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:24.809201" level="INFO">Clicking element 'xpath=//li[text()='Audi']'.</msg>
+<arg>locator=${_RADIO_BRAND}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:24.807650" elapsed="0.126684"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:24.935352" level="INFO">Clicking element 'xpath=//div[text()='กรุณาเลือกรุ่น']'.</msg>
+<arg>locator=${_BTN_MODEL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:24.934334" elapsed="0.351084"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:25.288432" level="INFO">Clicking element 'xpath=//li[text()='A5']'.</msg>
+<arg>locator=${_RADIO_MODEL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:25.286422" elapsed="0.194834"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:25.482302" level="INFO">Clicking element 'xpath=//div[text()='กรุณาเลือกปีจดทะเบียน']'.</msg>
+<arg>locator=${_BTN_YEAR_OF_REGISTRATION}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:25.482302" elapsed="0.397487"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:25.880789" level="INFO">Clicking element 'xpath=//li[text()='2567 (2024)']'.</msg>
+<arg>locator=${_RADIO_YEAR_OF_REGISTRATION}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:25.879789" elapsed="0.102162"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2025-08-21T14:19:25.982959" level="INFO">${random_chassis} = J48Q90ZFUGNLBGSYT</msg>
+<var>${random_chassis}</var>
+<arg>17</arg>
+<arg>ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-08-21T14:19:25.981951" elapsed="0.001008"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:25.984376" level="INFO">Typing text 'J48Q90ZFUGNLBGSYT' into text field 'xpath=//input[@id=':rc:' and @type='text']'.</msg>
+<arg>locator=${_LBL_VEHICLE_NUMBER}</arg>
+<arg>text=${random_chassis}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:25.982959" elapsed="0.600334"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:26.584368" level="INFO">Clicking element 'xpath=//div[text()='กรุณาเลือกสีรถ']'.</msg>
+<arg>locator=${_BTN_CAR_COLOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:26.583293" elapsed="0.159432"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:26.743726" level="INFO">Clicking element 'xpath=//li[text()='ขาว']'.</msg>
+<arg>locator=${_RADIO_CAR_COLOR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:26.743726" elapsed="0.271166"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:27.014892" level="INFO">Typing text '2500' into text field 'xpath=//input[@id=':rh:' and @type='text']'.</msg>
+<arg>locator=${_LBL_ENGINE_SIZE}</arg>
+<arg>text=${engine_size}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:27.014892" elapsed="0.290948"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2025-08-21T14:19:27.307347" level="INFO">${letters} = บว</msg>
+<var>${letters}</var>
+<arg>2</arg>
+<arg>กขคงจฉชซฌญฎฏฐฑฒณดตถทธนบปผฝพฟภมยรลวศษสหฬอฮ</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-08-21T14:19:27.307347" elapsed="0.001007"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2025-08-21T14:19:27.308354" level="INFO">${numbers} = 3399</msg>
+<var>${numbers}</var>
+<arg>4</arg>
+<arg>0123456789</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-08-21T14:19:27.308354" elapsed="0.001000"/>
+</kw>
+<variable name="${license_plate}" scope="test">
+<msg time="2025-08-21T14:19:27.309354" level="INFO">${license_plate} = บว3399</msg>
+<var>${letters}${numbers}</var>
+<status status="PASS" start="2025-08-21T14:19:27.309354" elapsed="0.001003"/>
+</variable>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:27.311501" level="INFO">Typing text 'บว3399' into text field 'xpath=//input[@id=':rk:' and @type='text']'.</msg>
+<arg>locator=${_LBL_VEHICLE_REGISTRATION_NUMBER}</arg>
+<arg>text=${license_plate}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:27.310357" elapsed="0.247039"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:27.558396" level="INFO">Clicking element 'xpath=//div[text()='กรุณาเลือกจังหวัด']'.</msg>
+<arg>locator=${_BTN_PROVINCE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:27.557396" elapsed="0.115867"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:27.674263" level="INFO">Clicking element 'xpath=//li[text()='กรุงเทพมหานคร']'.</msg>
+<arg>locator=${_RADIO_PROVINCE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:27.674263" elapsed="0.217823"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:27.893088" level="INFO">Clicking element 'xpath=//div[text()='วว']'.</msg>
+<arg>locator=${_BTN_DAY}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:27.892086" elapsed="0.480172"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:28.374267" level="INFO">Clicking element 'xpath=//li[text()='01']'.</msg>
+<arg>locator=${_RADIO_DAY}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:28.373253" elapsed="0.124199"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:28.498458" level="INFO">Clicking element 'xpath=//div[text()='ดด']'.</msg>
+<arg>locator=${_BTN_MOUNT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:28.497452" elapsed="0.349028"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:28.847480" level="INFO">Clicking element 'xpath=//li[text()='09']'.</msg>
+<arg>locator=${_RADIO_MOUNT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:28.846480" elapsed="0.136738"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:28.984199" level="INFO">Clicking element 'xpath=//div[text()='ปปปป']'.</msg>
+<arg>locator=${_BTN_YEAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:28.983218" elapsed="0.331047"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:29.315263" level="INFO">Clicking element 'xpath=//li[text()='2568']'.</msg>
+<arg>locator=${_RADIO_YEAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:29.314265" elapsed="0.085149"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:29.400416" level="INFO">Clicking element 'xpath=//button[@type="submit"]'.</msg>
+<arg>locator=${_BTN_SUBMIT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:29.399414" elapsed="0.340409"/>
+</kw>
+<status status="PASS" start="2025-08-21T14:19:24.684263" elapsed="5.055560"/>
+</branch>
+<branch type="ELSE">
+<kw name="Fail" owner="BuiltIn">
+<arg>msg=Popup Not Found</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-08-21T14:19:29.740831" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-08-21T14:19:29.739823" elapsed="0.001008"/>
+</branch>
+<status status="PASS" start="2025-08-21T14:19:24.683250" elapsed="5.057581"/>
+</if>
+<arg>engine_size=2500</arg>
+<doc>Owner : Danai Lertkamjornwat
+|     ***| Description |***
+|     Keyword ระบุข้อมูลรถ
+--------------------------------------------------------------------------
+|     ***| Required Parameter |***
+|     ${engine_size}   : ขนาดเครื่องยนต์
+--------------------------------------------------------------------------
+|     ***| Optional Parameter |***
+|     $timeout    : เวลา Wait Element (ค่า default = 15)
+--------------------------------------------------------------------------
+|     ***| Examples of use |***
+|     Input Field Car Information Popup    ${password}     🗂️ ใช้ภายในไฟล์
+|     InformationPage.Input Field Car Information Popup    ${password}   🌐 ใช้ภายนอกไฟล์
+==&gt;</doc>
+<status status="PASS" start="2025-08-21T14:19:24.284154" elapsed="5.456677"/>
+</kw>
+<kw name="Click Owner Information" owner="InformationPage">
+<kw name="_Set Test Local Variables" owner="InformationPage" type="SETUP">
+<variable name="${_TIMEOUT_RETURN_STATUS}" scope="test">
+<msg time="2025-08-21T14:19:29.747295" level="INFO">${_TIMEOUT_RETURN_STATUS} = 3</msg>
+<var>${Time_Out.Return_Status}</var>
+<status status="PASS" start="2025-08-21T14:19:29.747295" elapsed="0.001011"/>
+</variable>
+<variable name="${_TIMEOUT_RETURN_STATUS_MEDIUM}" scope="test">
+<msg time="2025-08-21T14:19:29.749304" level="INFO">${_TIMEOUT_RETURN_STATUS_MEDIUM} = 10</msg>
+<var>${Time_Out.Return_Status_Medium}</var>
+<status status="PASS" start="2025-08-21T14:19:29.748306" elapsed="0.000998"/>
+</variable>
+<variable name="${_TIMEOUT_RETURN_STATUS_QUICK}" scope="test">
+<msg time="2025-08-21T14:19:29.750812" level="INFO">${_TIMEOUT_RETURN_STATUS_QUICK} = 1</msg>
+<var>${Time_Out.Return_Status_Quick}</var>
+<status status="PASS" start="2025-08-21T14:19:29.749304" elapsed="0.001508"/>
+</variable>
+<variable name="${_TIMEOUT_LONG}" scope="test">
+<msg time="2025-08-21T14:19:29.756309" level="INFO">${_TIMEOUT_LONG} = 60</msg>
+<var>${Time_Out.Long}</var>
+<status status="PASS" start="2025-08-21T14:19:29.752296" elapsed="0.005300"/>
+</variable>
+<variable name="${_TIMEOUT_DEFAULT}" scope="test">
+<msg time="2025-08-21T14:19:29.759019" level="INFO">${_TIMEOUT_DEFAULT} = 15</msg>
+<var>${Time_Out.Default}</var>
+<status status="PASS" start="2025-08-21T14:19:29.757596" elapsed="0.001423"/>
+</variable>
+<variable name="${_BTN_CAR_INFORMATION}" scope="test">
+<msg time="2025-08-21T14:19:29.760527" level="INFO">${_BTN_CAR_INFORMATION} = xpath=//div[text()='ข้อมูลรถที่เอาประกัน']</msg>
+<var>${Xpath.Information.btnCarInformation}</var>
+<status status="PASS" start="2025-08-21T14:19:29.759019" elapsed="0.001508"/>
+</variable>
+<variable name="${_BTN_BRAND}" scope="test">
+<msg time="2025-08-21T14:19:29.761536" level="INFO">${_BTN_BRAND} = xpath=//div[text()='กรุณาเลือกยี่ห้อ']</msg>
+<var>${Xpath.Information.CarPopup.btnBrand}</var>
+<status status="PASS" start="2025-08-21T14:19:29.760527" elapsed="0.001009"/>
+</variable>
+<variable name="${_RADIO_BRAND}" scope="test">
+<msg time="2025-08-21T14:19:29.762535" level="INFO">${_RADIO_BRAND} = xpath=//li[text()='Audi']</msg>
+<var>${Xpath.Information.CarPopup.radioBrand}</var>
+<status status="PASS" start="2025-08-21T14:19:29.762535" elapsed="0.001008"/>
+</variable>
+<variable name="${_BTN_MODEL}" scope="test">
+<msg time="2025-08-21T14:19:29.764542" level="INFO">${_BTN_MODEL} = xpath=//div[text()='กรุณาเลือกรุ่น']</msg>
+<var>${Xpath.Information.CarPopup.btnModel}</var>
+<status status="PASS" start="2025-08-21T14:19:29.763543" elapsed="0.000999"/>
+</variable>
+<variable name="${_RADIO_MODEL}" scope="test">
+<msg time="2025-08-21T14:19:29.765543" level="INFO">${_RADIO_MODEL} = xpath=//li[text()='A5']</msg>
+<var>${Xpath.Information.CarPopup.radioModel}</var>
+<status status="PASS" start="2025-08-21T14:19:29.764542" elapsed="0.001001"/>
+</variable>
+<variable name="${_BTN_YEAR_OF_REGISTRATION}" scope="test">
+<msg time="2025-08-21T14:19:29.766542" level="INFO">${_BTN_YEAR_OF_REGISTRATION} = xpath=//div[text()='กรุณาเลือกปีจดทะเบียน']</msg>
+<var>${Xpath.Information.CarPopup.btnYearOfRegistration}</var>
+<status status="PASS" start="2025-08-21T14:19:29.765543" elapsed="0.000999"/>
+</variable>
+<variable name="${_RADIO_YEAR_OF_REGISTRATION}" scope="test">
+<msg time="2025-08-21T14:19:29.767542" level="INFO">${_RADIO_YEAR_OF_REGISTRATION} = xpath=//li[text()='2567 (2024)']</msg>
+<var>${Xpath.Information.CarPopup.radioYearOfRegistration}</var>
+<status status="PASS" start="2025-08-21T14:19:29.766542" elapsed="0.001000"/>
+</variable>
+<variable name="${_LBL_VEHICLE_NUMBER}" scope="test">
+<msg time="2025-08-21T14:19:29.768543" level="INFO">${_LBL_VEHICLE_NUMBER} = xpath=//input[@id=':rc:' and @type='text']</msg>
+<var>${Xpath.Information.CarPopup.lblVehicleNumber}</var>
+<status status="PASS" start="2025-08-21T14:19:29.767542" elapsed="0.001001"/>
+</variable>
+<variable name="${_BTN_CAR_COLOR}" scope="test">
+<msg time="2025-08-21T14:19:29.772484" level="INFO">${_BTN_CAR_COLOR} = xpath=//div[text()='กรุณาเลือกสีรถ']</msg>
+<var>${Xpath.Information.CarPopup.btnCarColor}</var>
+<status status="PASS" start="2025-08-21T14:19:29.768543" elapsed="0.005393"/>
+</variable>
+<variable name="${_RADIO_CAR_COLOR}" scope="test">
+<msg time="2025-08-21T14:19:29.774947" level="INFO">${_RADIO_CAR_COLOR} = xpath=//li[text()='ขาว']</msg>
+<var>${Xpath.Information.CarPopup.radioCarColor}</var>
+<status status="PASS" start="2025-08-21T14:19:29.773936" elapsed="0.002009"/>
+</variable>
+<variable name="${_LBL_ENGINE_SIZE}" scope="test">
+<msg time="2025-08-21T14:19:29.777451" level="INFO">${_LBL_ENGINE_SIZE} = xpath=//input[@id=':rh:' and @type='text']</msg>
+<var>${Xpath.Information.CarPopup.lblEngineSize}</var>
+<status status="PASS" start="2025-08-21T14:19:29.775945" elapsed="0.048348"/>
+</variable>
+<variable name="${_LBL_VEHICLE_REGISTRATION_NUMBER}" scope="test">
+<msg time="2025-08-21T14:19:29.826288" level="INFO">${_LBL_VEHICLE_REGISTRATION_NUMBER} = xpath=//input[@id=':rk:' and @type='text']</msg>
+<var>${Xpath.Information.CarPopup.lblVehicleRegistrationNumber}</var>
+<status status="PASS" start="2025-08-21T14:19:29.825289" elapsed="0.002522"/>
+</variable>
+<variable name="${_BTN_PROVINCE}" scope="test">
+<msg time="2025-08-21T14:19:29.829224" level="INFO">${_BTN_PROVINCE} = xpath=//div[text()='กรุณาเลือกจังหวัด']</msg>
+<var>${Xpath.Information.CarPopup.btnProVince}</var>
+<status status="PASS" start="2025-08-21T14:19:29.827811" elapsed="0.002920"/>
+</variable>
+<variable name="${_RADIO_PROVINCE}" scope="test">
+<msg time="2025-08-21T14:19:29.831381" level="INFO">${_RADIO_PROVINCE} = xpath=//li[text()='กรุงเทพมหานคร']</msg>
+<var>${Xpath.Information.CarPopup.radioProVince}</var>
+<status status="PASS" start="2025-08-21T14:19:29.830731" elapsed="0.001657"/>
+</variable>
+<variable name="${_BTN_DAY}" scope="test">
+<msg time="2025-08-21T14:19:29.833394" level="INFO">${_BTN_DAY} = xpath=//div[text()='วว']</msg>
+<var>${Xpath.Information.CarPopup.btnDay}</var>
+<status status="PASS" start="2025-08-21T14:19:29.832388" elapsed="0.001006"/>
+</variable>
+<variable name="${_RADIO_DAY}" scope="test">
+<msg time="2025-08-21T14:19:29.838390" level="INFO">${_RADIO_DAY} = xpath=//li[text()='01']</msg>
+<var>${Xpath.Information.CarPopup.radioDay}</var>
+<status status="PASS" start="2025-08-21T14:19:29.833394" elapsed="0.007516"/>
+</variable>
+<variable name="${_BTN_MOUNT}" scope="test">
+<msg time="2025-08-21T14:19:29.842919" level="INFO">${_BTN_MOUNT} = xpath=//div[text()='ดด']</msg>
+<var>${Xpath.Information.CarPopup.btnMount}</var>
+<status status="PASS" start="2025-08-21T14:19:29.840910" elapsed="0.002009"/>
+</variable>
+<variable name="${_RADIO_MOUNT}" scope="test">
+<msg time="2025-08-21T14:19:29.844355" level="INFO">${_RADIO_MOUNT} = xpath=//li[text()='09']</msg>
+<var>${Xpath.Information.CarPopup.radioMount}</var>
+<status status="PASS" start="2025-08-21T14:19:29.842919" elapsed="0.001436"/>
+</variable>
+<variable name="${_BTN_YEAR}" scope="test">
+<msg time="2025-08-21T14:19:29.845366" level="INFO">${_BTN_YEAR} = xpath=//div[text()='ปปปป']</msg>
+<var>${Xpath.Information.CarPopup.btnYear}</var>
+<status status="PASS" start="2025-08-21T14:19:29.844355" elapsed="0.002099"/>
+</variable>
+<variable name="${_RADIO_YEAR}" scope="test">
+<msg time="2025-08-21T14:19:29.846454" level="INFO">${_RADIO_YEAR} = xpath=//li[text()='2568']</msg>
+<var>${Xpath.Information.CarPopup.radioYear}</var>
+<status status="PASS" start="2025-08-21T14:19:29.846454" elapsed="0.001009"/>
+</variable>
+<variable name="${_BTN_SUBMIT}" scope="test">
+<msg time="2025-08-21T14:19:29.847463" level="INFO">${_BTN_SUBMIT} = xpath=//button[@type="submit"]</msg>
+<var>${Xpath.Information.CarPopup.btnSubmit}</var>
+<status status="PASS" start="2025-08-21T14:19:29.847463" elapsed="0.000000"/>
+</variable>
+<variable name="${_BTN_OWNER_INFORMATION}" scope="test">
+<msg time="2025-08-21T14:19:29.849472" level="INFO">${_BTN_OWNER_INFORMATION} = xpath=//div[text()='ข้อมูลเจ้าของกรมธรรม์']</msg>
+<var>${Xpath.Information.btnOwnerInformation}</var>
+<status status="PASS" start="2025-08-21T14:19:29.848471" elapsed="0.001001"/>
+</variable>
+<variable name="${_BTN_PREFIX}" scope="test">
+<msg time="2025-08-21T14:19:29.850978" level="INFO">${_BTN_PREFIX} = xpath=//div[text()='กรุณาระบุคำนำหน้าชื่อ']</msg>
+<var>${Xpath.Information.OwnerPopup.btnPrefix}</var>
+<status status="PASS" start="2025-08-21T14:19:29.849472" elapsed="0.001506"/>
+</variable>
+<variable name="${_RADIO_PREFIX}" scope="test">
+<msg time="2025-08-21T14:19:29.853204" level="INFO">${_RADIO_PREFIX} = xpath=//li[text()='นาย']</msg>
+<var>${Xpath.Information.OwnerPopup.radioPrefix}</var>
+<status status="PASS" start="2025-08-21T14:19:29.850978" elapsed="0.005825"/>
+</variable>
+<variable name="${_LBL_FRIST_NAME}" scope="test">
+<msg time="2025-08-21T14:19:29.857818" level="INFO">${_LBL_FRIST_NAME} = xpath=//input[@id=':r11:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblFristName}</var>
+<status status="PASS" start="2025-08-21T14:19:29.856803" elapsed="0.002023"/>
+</variable>
+<variable name="${_LBL_LAST_NAME}" scope="test">
+<msg time="2025-08-21T14:19:29.861345" level="INFO">${_LBL_LAST_NAME} = xpath=//input[@id=':r14:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblLastName}</var>
+<status status="PASS" start="2025-08-21T14:19:29.858826" elapsed="0.002519"/>
+</variable>
+<variable name="${_BTN_OWNER_DAY}" scope="test">
+<msg time="2025-08-21T14:19:29.864373" level="INFO">${_BTN_OWNER_DAY} = xpath=//div[text()='วว']</msg>
+<var>${Xpath.Information.OwnerPopup.btnDay}</var>
+<status status="PASS" start="2025-08-21T14:19:29.862366" elapsed="0.002007"/>
+</variable>
+<variable name="${_RADIO_OWNER_DAY}" scope="test">
+<msg time="2025-08-21T14:19:29.865823" level="INFO">${_RADIO_OWNER_DAY} = xpath=//li[text()='01']</msg>
+<var>${Xpath.Information.OwnerPopup.radioDay}</var>
+<status status="PASS" start="2025-08-21T14:19:29.864373" elapsed="0.001450"/>
+</variable>
+<variable name="${_BTN_OWNER_MOUNT}" scope="test">
+<msg time="2025-08-21T14:19:29.866833" level="INFO">${_BTN_OWNER_MOUNT} = xpath=//div[text()='ดด']</msg>
+<var>${Xpath.Information.OwnerPopup.btnMount}</var>
+<status status="PASS" start="2025-08-21T14:19:29.865823" elapsed="0.002016"/>
+</variable>
+<variable name="${_RADIO_OWNER_MOUNT}" scope="test">
+<msg time="2025-08-21T14:19:29.868840" level="INFO">${_RADIO_OWNER_MOUNT} = xpath=//li[text()='06']</msg>
+<var>${Xpath.Information.OwnerPopup.radioMount}</var>
+<status status="PASS" start="2025-08-21T14:19:29.867839" elapsed="0.002566"/>
+</variable>
+<variable name="${_BTN_OWNER_YEAR}" scope="test">
+<msg time="2025-08-21T14:19:29.874428" level="INFO">${_BTN_OWNER_YEAR} = xpath=//div[text()='ปปปป']</msg>
+<var>${Xpath.Information.OwnerPopup.btnYear}</var>
+<status status="PASS" start="2025-08-21T14:19:29.873420" elapsed="0.002009"/>
+</variable>
+<variable name="${_RADIO_OWNER_YEAR}" scope="test">
+<msg time="2025-08-21T14:19:29.878433" level="INFO">${_RADIO_OWNER_YEAR} = xpath=//li[text()='2546']</msg>
+<var>${Xpath.Information.OwnerPopup.radioYear}</var>
+<status status="PASS" start="2025-08-21T14:19:29.877428" elapsed="0.001005"/>
+</variable>
+<variable name="${_LBL_ID_CARD}" scope="test">
+<msg time="2025-08-21T14:19:29.880434" level="INFO">${_LBL_ID_CARD} = xpath=//input[@id=':r1d:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblIDCard}</var>
+<status status="PASS" start="2025-08-21T14:19:29.878433" elapsed="0.002508"/>
+</variable>
+<variable name="${_LBL_ADDRESS_ID_CRAD}" scope="test">
+<msg time="2025-08-21T14:19:29.882752" level="INFO">${_LBL_ADDRESS_ID_CRAD} = xpath=//input[@id=':r1g:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblAddressIDCard}</var>
+<status status="PASS" start="2025-08-21T14:19:29.880941" elapsed="0.001811"/>
+</variable>
+<variable name="${_LBL_ZIP_CODE}" scope="test">
+<msg time="2025-08-21T14:19:29.884259" level="INFO">${_LBL_ZIP_CODE} = xpath=//input[@id=':r1j:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblZipCode}</var>
+<status status="PASS" start="2025-08-21T14:19:29.882752" elapsed="0.001507"/>
+</variable>
+<variable name="${_LBL_OWNER_PROVICE}" scope="test">
+<msg time="2025-08-21T14:19:29.885266" level="INFO">${_LBL_OWNER_PROVICE} = xpath=//input[@id=':r1l:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblProvice}</var>
+<status status="PASS" start="2025-08-21T14:19:29.884259" elapsed="0.001007"/>
+</variable>
+<variable name="${_LBL_COUNTY}" scope="test">
+<msg time="2025-08-21T14:19:29.890833" level="INFO">${_LBL_COUNTY} = xpath=//input[@id=':r1n:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblCounty}</var>
+<status status="PASS" start="2025-08-21T14:19:29.886588" elapsed="0.005260"/>
+</variable>
+<variable name="${_LBL_DISTRICT}" scope="test">
+<msg time="2025-08-21T14:19:29.892858" level="INFO">${_LBL_DISTRICT} = xpath=//input[@id=':r1p:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblDistrict}</var>
+<status status="PASS" start="2025-08-21T14:19:29.891848" elapsed="0.002007"/>
+</variable>
+<variable name="${_LBL_EMAIL}" scope="test">
+<msg time="2025-08-21T14:19:29.893855" level="INFO">${_LBL_EMAIL} = xpath=//input[@id=':r1r:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblEmail}</var>
+<status status="PASS" start="2025-08-21T14:19:29.893855" elapsed="0.001001"/>
+</variable>
+<variable name="${_LBL_CONFIRM_EMAIL}" scope="test">
+<msg time="2025-08-21T14:19:29.943095" level="INFO">${_LBL_CONFIRM_EMAIL} = xpath=//input[@name="confirmEmail"]</msg>
+<var>${Xpath.Information.OwnerPopup.lblConfirmEmail}</var>
+<status status="PASS" start="2025-08-21T14:19:29.894856" elapsed="0.049276"/>
+</variable>
+<variable name="${_LBL_PHONE}" scope="test">
+<msg time="2025-08-21T14:19:29.946557" level="INFO">${_LBL_PHONE} = xpath=//input[@id=':r1u:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblPhone}</var>
+<status status="PASS" start="2025-08-21T14:19:29.944132" elapsed="0.003431"/>
+</variable>
+<variable name="${_BTN_OWNER_SUBMIT}" scope="test">
+<msg time="2025-08-21T14:19:29.948068" level="INFO">${_BTN_OWNER_SUBMIT} = xpath=//button[@type="submit"]</msg>
+<var>${Xpath.Information.OwnerPopup.btnSubmit}</var>
+<status status="PASS" start="2025-08-21T14:19:29.948068" elapsed="0.001007"/>
+</variable>
+<variable name="${_BTN_MAIN_SUBMIT}" scope="test">
+<msg time="2025-08-21T14:19:29.950592" level="INFO">${_BTN_MAIN_SUBMIT} = xpath=//button[text()='ดำเนินการต่อ']</msg>
+<var>${Xpath.Information.btnSubmit}</var>
+<status status="PASS" start="2025-08-21T14:19:29.949075" elapsed="0.001517"/>
+</variable>
+<variable name="${_BTN_NEXT}" scope="test">
+<msg time="2025-08-21T14:19:29.951601" level="INFO">${_BTN_NEXT} = xpath=//button[text()='ถัดไป']</msg>
+<var>${Xpath.Information.btnNext}</var>
+<status status="PASS" start="2025-08-21T14:19:29.950592" elapsed="0.006000"/>
+</variable>
+<tag>robot:private</tag>
+<doc>เตรียมตัวแปรสำหรับใช้งานในแต่ละ Keywords</doc>
+<status status="PASS" start="2025-08-21T14:19:29.745932" elapsed="0.254932"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${_BTN_OWNER_INFORMATION}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-21T14:19:30.004326" elapsed="0.020623"/>
+</kw>
+<msg time="2025-08-21T14:19:30.024949" level="INFO">${Status} = True</msg>
+<var>${Status}</var>
+<arg>SeleniumLibrary.Wait Until Element Is Visible</arg>
+<arg>${_BTN_OWNER_INFORMATION}</arg>
+<arg>${timeout}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-08-21T14:19:30.000864" elapsed="0.024085"/>
+</kw>
+<if>
+<branch type="IF" condition="${Status}">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:30.026154" level="INFO">Clicking element 'xpath=//div[text()='ข้อมูลเจ้าของกรมธรรม์']'.</msg>
+<arg>${_BTN_OWNER_INFORMATION}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:30.026154" elapsed="0.111400"/>
+</kw>
+<status status="PASS" start="2025-08-21T14:19:30.024949" elapsed="0.112605"/>
+</branch>
+<branch type="ELSE">
+<kw name="Fail" owner="BuiltIn">
+<arg>msg=Button Not Found</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-08-21T14:19:30.139502" elapsed="0.001010"/>
+</kw>
+<status status="NOT RUN" start="2025-08-21T14:19:30.137554" elapsed="0.002958"/>
+</branch>
+<status status="PASS" start="2025-08-21T14:19:30.024949" elapsed="0.115563"/>
+</if>
+<doc>Owner : Danai Lertkamjornwat
+|     ***| Description |***
+|     Keyword เลือก Insurance Type
+--------------------------------------------------------------------------
+|     ***| Optional Parameter |***
+|     $timeout    : เวลา Wait Element (ค่า default = 15)
+--------------------------------------------------------------------------
+|     ***| Examples of use |***
+|     Click Owner Information     🗂️ ใช้ภายในไฟล์
+|     InformationPage.Click Owner Information   🌐 ใช้ภายนอกไฟล์
+==&gt;</doc>
+<status status="PASS" start="2025-08-21T14:19:29.743483" elapsed="0.397029"/>
+</kw>
+<kw name="Input Field Owner Information Popup" owner="InformationPage">
+<kw name="_Set Test Local Variables" owner="InformationPage" type="SETUP">
+<variable name="${_TIMEOUT_RETURN_STATUS}" scope="test">
+<msg time="2025-08-21T14:19:30.150713" level="INFO">${_TIMEOUT_RETURN_STATUS} = 3</msg>
+<var>${Time_Out.Return_Status}</var>
+<status status="PASS" start="2025-08-21T14:19:30.149702" elapsed="0.001011"/>
+</variable>
+<variable name="${_TIMEOUT_RETURN_STATUS_MEDIUM}" scope="test">
+<msg time="2025-08-21T14:19:30.151725" level="INFO">${_TIMEOUT_RETURN_STATUS_MEDIUM} = 10</msg>
+<var>${Time_Out.Return_Status_Medium}</var>
+<status status="PASS" start="2025-08-21T14:19:30.150713" elapsed="0.005055"/>
+</variable>
+<variable name="${_TIMEOUT_RETURN_STATUS_QUICK}" scope="test">
+<msg time="2025-08-21T14:19:30.198938" level="INFO">${_TIMEOUT_RETURN_STATUS_QUICK} = 1</msg>
+<var>${Time_Out.Return_Status_Quick}</var>
+<status status="PASS" start="2025-08-21T14:19:30.155768" elapsed="0.044678"/>
+</variable>
+<variable name="${_TIMEOUT_LONG}" scope="test">
+<msg time="2025-08-21T14:19:30.208624" level="INFO">${_TIMEOUT_LONG} = 60</msg>
+<var>${Time_Out.Long}</var>
+<status status="PASS" start="2025-08-21T14:19:30.200446" elapsed="0.009174"/>
+</variable>
+<variable name="${_TIMEOUT_DEFAULT}" scope="test">
+<msg time="2025-08-21T14:19:30.211639" level="INFO">${_TIMEOUT_DEFAULT} = 15</msg>
+<var>${Time_Out.Default}</var>
+<status status="PASS" start="2025-08-21T14:19:30.209620" elapsed="0.002019"/>
+</variable>
+<variable name="${_BTN_CAR_INFORMATION}" scope="test">
+<msg time="2025-08-21T14:19:30.212716" level="INFO">${_BTN_CAR_INFORMATION} = xpath=//div[text()='ข้อมูลรถที่เอาประกัน']</msg>
+<var>${Xpath.Information.btnCarInformation}</var>
+<status status="PASS" start="2025-08-21T14:19:30.211639" elapsed="0.001077"/>
+</variable>
+<variable name="${_BTN_BRAND}" scope="test">
+<msg time="2025-08-21T14:19:30.213725" level="INFO">${_BTN_BRAND} = xpath=//div[text()='กรุณาเลือกยี่ห้อ']</msg>
+<var>${Xpath.Information.CarPopup.btnBrand}</var>
+<status status="PASS" start="2025-08-21T14:19:30.212716" elapsed="0.001009"/>
+</variable>
+<variable name="${_RADIO_BRAND}" scope="test">
+<msg time="2025-08-21T14:19:30.214723" level="INFO">${_RADIO_BRAND} = xpath=//li[text()='Audi']</msg>
+<var>${Xpath.Information.CarPopup.radioBrand}</var>
+<status status="PASS" start="2025-08-21T14:19:30.213725" elapsed="0.002002"/>
+</variable>
+<variable name="${_BTN_MODEL}" scope="test">
+<msg time="2025-08-21T14:19:30.216725" level="INFO">${_BTN_MODEL} = xpath=//div[text()='กรุณาเลือกรุ่น']</msg>
+<var>${Xpath.Information.CarPopup.btnModel}</var>
+<status status="PASS" start="2025-08-21T14:19:30.215727" elapsed="0.000998"/>
+</variable>
+<variable name="${_RADIO_MODEL}" scope="test">
+<msg time="2025-08-21T14:19:30.217726" level="INFO">${_RADIO_MODEL} = xpath=//li[text()='A5']</msg>
+<var>${Xpath.Information.CarPopup.radioModel}</var>
+<status status="PASS" start="2025-08-21T14:19:30.216725" elapsed="0.001001"/>
+</variable>
+<variable name="${_BTN_YEAR_OF_REGISTRATION}" scope="test">
+<msg time="2025-08-21T14:19:30.219732" level="INFO">${_BTN_YEAR_OF_REGISTRATION} = xpath=//div[text()='กรุณาเลือกปีจดทะเบียน']</msg>
+<var>${Xpath.Information.CarPopup.btnYearOfRegistration}</var>
+<status status="PASS" start="2025-08-21T14:19:30.217726" elapsed="0.005521"/>
+</variable>
+<variable name="${_RADIO_YEAR_OF_REGISTRATION}" scope="test">
+<msg time="2025-08-21T14:19:30.225254" level="INFO">${_RADIO_YEAR_OF_REGISTRATION} = xpath=//li[text()='2567 (2024)']</msg>
+<var>${Xpath.Information.CarPopup.radioYearOfRegistration}</var>
+<status status="PASS" start="2025-08-21T14:19:30.223247" elapsed="0.002007"/>
+</variable>
+<variable name="${_LBL_VEHICLE_NUMBER}" scope="test">
+<msg time="2025-08-21T14:19:30.276604" level="INFO">${_LBL_VEHICLE_NUMBER} = xpath=//input[@id=':rc:' and @type='text']</msg>
+<var>${Xpath.Information.CarPopup.lblVehicleNumber}</var>
+<status status="PASS" start="2025-08-21T14:19:30.226252" elapsed="0.051372"/>
+</variable>
+<variable name="${_BTN_CAR_COLOR}" scope="test">
+<msg time="2025-08-21T14:19:30.279636" level="INFO">${_BTN_CAR_COLOR} = xpath=//div[text()='กรุณาเลือกสีรถ']</msg>
+<var>${Xpath.Information.CarPopup.btnCarColor}</var>
+<status status="PASS" start="2025-08-21T14:19:30.277624" elapsed="0.002012"/>
+</variable>
+<variable name="${_RADIO_CAR_COLOR}" scope="test">
+<msg time="2025-08-21T14:19:30.281654" level="INFO">${_RADIO_CAR_COLOR} = xpath=//li[text()='ขาว']</msg>
+<var>${Xpath.Information.CarPopup.radioCarColor}</var>
+<status status="PASS" start="2025-08-21T14:19:30.280635" elapsed="0.001019"/>
+</variable>
+<variable name="${_LBL_ENGINE_SIZE}" scope="test">
+<msg time="2025-08-21T14:19:30.283142" level="INFO">${_LBL_ENGINE_SIZE} = xpath=//input[@id=':rh:' and @type='text']</msg>
+<var>${Xpath.Information.CarPopup.lblEngineSize}</var>
+<status status="PASS" start="2025-08-21T14:19:30.281654" elapsed="0.001488"/>
+</variable>
+<variable name="${_LBL_VEHICLE_REGISTRATION_NUMBER}" scope="test">
+<msg time="2025-08-21T14:19:30.284155" level="INFO">${_LBL_VEHICLE_REGISTRATION_NUMBER} = xpath=//input[@id=':rk:' and @type='text']</msg>
+<var>${Xpath.Information.CarPopup.lblVehicleRegistrationNumber}</var>
+<status status="PASS" start="2025-08-21T14:19:30.283142" elapsed="0.001013"/>
+</variable>
+<variable name="${_BTN_PROVINCE}" scope="test">
+<msg time="2025-08-21T14:19:30.289086" level="INFO">${_BTN_PROVINCE} = xpath=//div[text()='กรุณาเลือกจังหวัด']</msg>
+<var>${Xpath.Information.CarPopup.btnProVince}</var>
+<status status="PASS" start="2025-08-21T14:19:30.284155" elapsed="0.006442"/>
+</variable>
+<variable name="${_RADIO_PROVINCE}" scope="test">
+<msg time="2025-08-21T14:19:30.291606" level="INFO">${_RADIO_PROVINCE} = xpath=//li[text()='กรุงเทพมหานคร']</msg>
+<var>${Xpath.Information.CarPopup.radioProVince}</var>
+<status status="PASS" start="2025-08-21T14:19:30.290597" elapsed="0.002013"/>
+</variable>
+<variable name="${_BTN_DAY}" scope="test">
+<msg time="2025-08-21T14:19:30.293606" level="INFO">${_BTN_DAY} = xpath=//div[text()='วว']</msg>
+<var>${Xpath.Information.CarPopup.btnDay}</var>
+<status status="PASS" start="2025-08-21T14:19:30.292610" elapsed="0.000996"/>
+</variable>
+<variable name="${_RADIO_DAY}" scope="test">
+<msg time="2025-08-21T14:19:30.294607" level="INFO">${_RADIO_DAY} = xpath=//li[text()='01']</msg>
+<var>${Xpath.Information.CarPopup.radioDay}</var>
+<status status="PASS" start="2025-08-21T14:19:30.293606" elapsed="0.001001"/>
+</variable>
+<variable name="${_BTN_MOUNT}" scope="test">
+<msg time="2025-08-21T14:19:30.295639" level="INFO">${_BTN_MOUNT} = xpath=//div[text()='ดด']</msg>
+<var>${Xpath.Information.CarPopup.btnMount}</var>
+<status status="PASS" start="2025-08-21T14:19:30.294607" elapsed="0.002044"/>
+</variable>
+<variable name="${_RADIO_MOUNT}" scope="test">
+<msg time="2025-08-21T14:19:30.297649" level="INFO">${_RADIO_MOUNT} = xpath=//li[text()='09']</msg>
+<var>${Xpath.Information.CarPopup.radioMount}</var>
+<status status="PASS" start="2025-08-21T14:19:30.296651" elapsed="0.000998"/>
+</variable>
+<variable name="${_BTN_YEAR}" scope="test">
+<msg time="2025-08-21T14:19:30.297649" level="INFO">${_BTN_YEAR} = xpath=//div[text()='ปปปป']</msg>
+<var>${Xpath.Information.CarPopup.btnYear}</var>
+<status status="PASS" start="2025-08-21T14:19:30.297649" elapsed="0.000000"/>
+</variable>
+<variable name="${_RADIO_YEAR}" scope="test">
+<msg time="2025-08-21T14:19:30.299157" level="INFO">${_RADIO_YEAR} = xpath=//li[text()='2568']</msg>
+<var>${Xpath.Information.CarPopup.radioYear}</var>
+<status status="PASS" start="2025-08-21T14:19:30.299157" elapsed="0.000000"/>
+</variable>
+<variable name="${_BTN_SUBMIT}" scope="test">
+<msg time="2025-08-21T14:19:30.300683" level="INFO">${_BTN_SUBMIT} = xpath=//button[@type="submit"]</msg>
+<var>${Xpath.Information.CarPopup.btnSubmit}</var>
+<status status="PASS" start="2025-08-21T14:19:30.299157" elapsed="0.002535"/>
+</variable>
+<variable name="${_BTN_OWNER_INFORMATION}" scope="test">
+<msg time="2025-08-21T14:19:30.305750" level="INFO">${_BTN_OWNER_INFORMATION} = xpath=//div[text()='ข้อมูลเจ้าของกรมธรรม์']</msg>
+<var>${Xpath.Information.btnOwnerInformation}</var>
+<status status="PASS" start="2025-08-21T14:19:30.301692" elapsed="0.008069"/>
+</variable>
+<variable name="${_BTN_PREFIX}" scope="test">
+<msg time="2025-08-21T14:19:30.310687" level="INFO">${_BTN_PREFIX} = xpath=//div[text()='กรุณาระบุคำนำหน้าชื่อ']</msg>
+<var>${Xpath.Information.OwnerPopup.btnPrefix}</var>
+<status status="PASS" start="2025-08-21T14:19:30.310687" elapsed="0.002010"/>
+</variable>
+<variable name="${_RADIO_PREFIX}" scope="test">
+<msg time="2025-08-21T14:19:30.313707" level="INFO">${_RADIO_PREFIX} = xpath=//li[text()='นาย']</msg>
+<var>${Xpath.Information.OwnerPopup.radioPrefix}</var>
+<status status="PASS" start="2025-08-21T14:19:30.312697" elapsed="0.001010"/>
+</variable>
+<variable name="${_LBL_FRIST_NAME}" scope="test">
+<msg time="2025-08-21T14:19:30.363580" level="INFO">${_LBL_FRIST_NAME} = xpath=//input[@id=':r11:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblFristName}</var>
+<status status="PASS" start="2025-08-21T14:19:30.358626" elapsed="0.004954"/>
+</variable>
+<variable name="${_LBL_LAST_NAME}" scope="test">
+<msg time="2025-08-21T14:19:30.365591" level="INFO">${_LBL_LAST_NAME} = xpath=//input[@id=':r14:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblLastName}</var>
+<status status="PASS" start="2025-08-21T14:19:30.364591" elapsed="0.001000"/>
+</variable>
+<variable name="${_BTN_OWNER_DAY}" scope="test">
+<msg time="2025-08-21T14:19:30.366590" level="INFO">${_BTN_OWNER_DAY} = xpath=//div[text()='วว']</msg>
+<var>${Xpath.Information.OwnerPopup.btnDay}</var>
+<status status="PASS" start="2025-08-21T14:19:30.365591" elapsed="0.000999"/>
+</variable>
+<variable name="${_RADIO_OWNER_DAY}" scope="test">
+<msg time="2025-08-21T14:19:30.368038" level="INFO">${_RADIO_OWNER_DAY} = xpath=//li[text()='01']</msg>
+<var>${Xpath.Information.OwnerPopup.radioDay}</var>
+<status status="PASS" start="2025-08-21T14:19:30.366590" elapsed="0.002816"/>
+</variable>
+<variable name="${_BTN_OWNER_MOUNT}" scope="test">
+<msg time="2025-08-21T14:19:30.425157" level="INFO">${_BTN_OWNER_MOUNT} = xpath=//div[text()='ดด']</msg>
+<var>${Xpath.Information.OwnerPopup.btnMount}</var>
+<status status="PASS" start="2025-08-21T14:19:30.374569" elapsed="0.051839"/>
+</variable>
+<variable name="${_RADIO_OWNER_MOUNT}" scope="test">
+<msg time="2025-08-21T14:19:30.428422" level="INFO">${_RADIO_OWNER_MOUNT} = xpath=//li[text()='06']</msg>
+<var>${Xpath.Information.OwnerPopup.radioMount}</var>
+<status status="PASS" start="2025-08-21T14:19:30.427414" elapsed="0.001008"/>
+</variable>
+<variable name="${_BTN_OWNER_YEAR}" scope="test">
+<msg time="2025-08-21T14:19:30.429641" level="INFO">${_BTN_OWNER_YEAR} = xpath=//div[text()='ปปปป']</msg>
+<var>${Xpath.Information.OwnerPopup.btnYear}</var>
+<status status="PASS" start="2025-08-21T14:19:30.428422" elapsed="0.001219"/>
+</variable>
+<variable name="${_RADIO_OWNER_YEAR}" scope="test">
+<msg time="2025-08-21T14:19:30.430648" level="INFO">${_RADIO_OWNER_YEAR} = xpath=//li[text()='2546']</msg>
+<var>${Xpath.Information.OwnerPopup.radioYear}</var>
+<status status="PASS" start="2025-08-21T14:19:30.430648" elapsed="0.001013"/>
+</variable>
+<variable name="${_LBL_ID_CARD}" scope="test">
+<msg time="2025-08-21T14:19:30.432659" level="INFO">${_LBL_ID_CARD} = xpath=//input[@id=':r1d:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblIDCard}</var>
+<status status="PASS" start="2025-08-21T14:19:30.431661" elapsed="0.000998"/>
+</variable>
+<variable name="${_LBL_ADDRESS_ID_CRAD}" scope="test">
+<msg time="2025-08-21T14:19:30.433991" level="INFO">${_LBL_ADDRESS_ID_CRAD} = xpath=//input[@id=':r1g:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblAddressIDCard}</var>
+<status status="PASS" start="2025-08-21T14:19:30.432659" elapsed="0.001332"/>
+</variable>
+<variable name="${_LBL_ZIP_CODE}" scope="test">
+<msg time="2025-08-21T14:19:30.434990" level="INFO">${_LBL_ZIP_CODE} = xpath=//input[@id=':r1j:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblZipCode}</var>
+<status status="PASS" start="2025-08-21T14:19:30.433991" elapsed="0.000999"/>
+</variable>
+<variable name="${_LBL_OWNER_PROVICE}" scope="test">
+<msg time="2025-08-21T14:19:30.438665" level="INFO">${_LBL_OWNER_PROVICE} = xpath=//input[@id=':r1l:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblProvice}</var>
+<status status="PASS" start="2025-08-21T14:19:30.434990" elapsed="0.003675"/>
+</variable>
+<variable name="${_LBL_COUNTY}" scope="test">
+<msg time="2025-08-21T14:19:30.439664" level="INFO">${_LBL_COUNTY} = xpath=//input[@id=':r1n:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblCounty}</var>
+<status status="PASS" start="2025-08-21T14:19:30.438665" elapsed="0.002005"/>
+</variable>
+<variable name="${_LBL_DISTRICT}" scope="test">
+<msg time="2025-08-21T14:19:30.440670" level="INFO">${_LBL_DISTRICT} = xpath=//input[@id=':r1p:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblDistrict}</var>
+<status status="PASS" start="2025-08-21T14:19:30.440670" elapsed="0.001220"/>
+</variable>
+<variable name="${_LBL_EMAIL}" scope="test">
+<msg time="2025-08-21T14:19:30.442899" level="INFO">${_LBL_EMAIL} = xpath=//input[@id=':r1r:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblEmail}</var>
+<status status="PASS" start="2025-08-21T14:19:30.441890" elapsed="0.001009"/>
+</variable>
+<variable name="${_LBL_CONFIRM_EMAIL}" scope="test">
+<msg time="2025-08-21T14:19:30.443900" level="INFO">${_LBL_CONFIRM_EMAIL} = xpath=//input[@name="confirmEmail"]</msg>
+<var>${Xpath.Information.OwnerPopup.lblConfirmEmail}</var>
+<status status="PASS" start="2025-08-21T14:19:30.442899" elapsed="0.002037"/>
+</variable>
+<variable name="${_LBL_PHONE}" scope="test">
+<msg time="2025-08-21T14:19:30.445900" level="INFO">${_LBL_PHONE} = xpath=//input[@id=':r1u:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblPhone}</var>
+<status status="PASS" start="2025-08-21T14:19:30.444936" elapsed="0.000964"/>
+</variable>
+<variable name="${_BTN_OWNER_SUBMIT}" scope="test">
+<msg time="2025-08-21T14:19:30.445900" level="INFO">${_BTN_OWNER_SUBMIT} = xpath=//button[@type="submit"]</msg>
+<var>${Xpath.Information.OwnerPopup.btnSubmit}</var>
+<status status="PASS" start="2025-08-21T14:19:30.445900" elapsed="0.000000"/>
+</variable>
+<variable name="${_BTN_MAIN_SUBMIT}" scope="test">
+<msg time="2025-08-21T14:19:30.447406" level="INFO">${_BTN_MAIN_SUBMIT} = xpath=//button[text()='ดำเนินการต่อ']</msg>
+<var>${Xpath.Information.btnSubmit}</var>
+<status status="PASS" start="2025-08-21T14:19:30.445900" elapsed="0.002513"/>
+</variable>
+<variable name="${_BTN_NEXT}" scope="test">
+<msg time="2025-08-21T14:19:30.448413" level="INFO">${_BTN_NEXT} = xpath=//button[text()='ถัดไป']</msg>
+<var>${Xpath.Information.btnNext}</var>
+<status status="PASS" start="2025-08-21T14:19:30.448413" elapsed="0.001000"/>
+</variable>
+<tag>robot:private</tag>
+<doc>เตรียมตัวแปรสำหรับใช้งานในแต่ละ Keywords</doc>
+<status status="PASS" start="2025-08-21T14:19:30.148539" elapsed="0.300874"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${_BTN_PREFIX}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-21T14:19:30.450415" elapsed="0.028226"/>
+</kw>
+<msg time="2025-08-21T14:19:30.478641" level="INFO">${Status} = True</msg>
+<var>${Status}</var>
+<arg>SeleniumLibrary.Wait Until Element Is Visible</arg>
+<arg>${_BTN_PREFIX}</arg>
+<arg>${timeout}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-08-21T14:19:30.449413" elapsed="0.029228"/>
+</kw>
+<if>
+<branch type="IF" condition="${Status}">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:30.479648" level="INFO">Clicking element 'xpath=//div[text()='กรุณาระบุคำนำหน้าชื่อ']'.</msg>
+<arg>locator=${_BTN_PREFIX}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:30.479648" elapsed="0.070947"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:30.551138" level="INFO">Clicking element 'xpath=//li[text()='นาย']'.</msg>
+<arg>locator=${_RADIO_PREFIX}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:30.551138" elapsed="0.079454"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:30.631659" level="INFO">Typing text 'ดนัย' into text field 'xpath=//input[@id=':r11:' and @type='text']'.</msg>
+<arg>locator=${_LBL_FRIST_NAME}</arg>
+<arg>text=${frist_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:30.630592" elapsed="0.204303"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:30.835917" level="INFO">Typing text 'เลิศกำจรวัฒน์' into text field 'xpath=//input[@id=':r14:' and @type='text']'.</msg>
+<arg>locator=${_LBL_LAST_NAME}</arg>
+<arg>text=${last_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:30.834895" elapsed="0.141345"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:30.976240" level="INFO">Clicking element 'xpath=//div[text()='วว']'.</msg>
+<arg>locator=${_BTN_OWNER_DAY}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:30.976240" elapsed="0.147652"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:31.124891" level="INFO">Clicking element 'xpath=//li[text()='01']'.</msg>
+<arg>locator=${_RADIO_OWNER_DAY}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:31.123892" elapsed="0.231305"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:31.356715" level="INFO">Clicking element 'xpath=//div[text()='ดด']'.</msg>
+<arg>locator=${_BTN_OWNER_MOUNT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:31.355704" elapsed="0.409296"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:31.765999" level="INFO">Clicking element 'xpath=//li[text()='06']'.</msg>
+<arg>locator=${_RADIO_OWNER_MOUNT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:31.765000" elapsed="0.106973"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:31.873427" level="INFO">Clicking element 'xpath=//div[text()='ปปปป']'.</msg>
+<arg>locator=${_BTN_OWNER_YEAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:31.871973" elapsed="0.364656"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:32.238658" level="INFO">Clicking element 'xpath=//li[text()='2546']'.</msg>
+<arg>locator=${_RADIO_OWNER_YEAR}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:32.237639" elapsed="0.284936"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2025-08-21T14:19:32.523955" level="INFO">${random_11} = 90182105795</msg>
+<var>${random_11}</var>
+<arg>11</arg>
+<arg>0123456789</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-08-21T14:19:32.523955" elapsed="0.001125"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-08-21T14:19:32.525080" level="INFO">${first_12} = 190182105795</msg>
+<var>${first_12}</var>
+<arg>1${random_11}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-08-21T14:19:32.525080" elapsed="0.001007"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-08-21T14:19:32.527593" level="INFO">${sum} = 316</msg>
+<var>${sum}</var>
+<arg>sum(int('${first_12}'[i]) * (13-i) for i in range(12))</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-08-21T14:19:32.526087" elapsed="0.001506"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-08-21T14:19:32.529604" level="INFO">${check_digit} = 3</msg>
+<var>${check_digit}</var>
+<arg>str((11 - (${sum} % 11)) % 10)</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-08-21T14:19:32.528603" elapsed="0.001001"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-08-21T14:19:32.530604" level="INFO">${id_number} = 1901821057953</msg>
+<var>${id_number}</var>
+<arg>${first_12}${check_digit}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-08-21T14:19:32.529604" elapsed="0.001506"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:32.531110" level="INFO">Typing text '1901821057953' into text field 'xpath=//input[@id=':r1d:' and @type='text']'.</msg>
+<arg>locator=${_LBL_ID_CARD}</arg>
+<arg>text=${id_number}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:32.531110" elapsed="0.150203"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:32.682314" level="INFO">Typing text '91/22' into text field 'xpath=//input[@id=':r1g:' and @type='text']'.</msg>
+<arg>locator=${_LBL_ADDRESS_ID_CRAD}</arg>
+<arg>text=${address_id_card}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:32.681313" elapsed="0.429393"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:33.110706" level="INFO">Typing text '10140' into text field 'xpath=//input[@id=':r1j:' and @type='text']'.</msg>
+<arg>locator=${_LBL_ZIP_CODE}</arg>
+<arg>text=${zip_code}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:33.110706" elapsed="0.502854"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-21T14:19:36.613856" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-21T14:19:33.613560" elapsed="3.000801"/>
+</kw>
+<kw name="Generate Random String" owner="String">
+<msg time="2025-08-21T14:19:36.614361" level="INFO">${random_user} = 9z9f5gbd</msg>
+<var>${random_user}</var>
+<arg>8</arg>
+<arg>abcdefghijklmnopqrstuvwxyz0123456789</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2025-08-21T14:19:36.614361" elapsed="0.000000"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:36.616005" level="INFO">Typing text '9z9f5gbd@gmail.com' into text field 'xpath=//input[@id=':r1r:' and @type='text']'.</msg>
+<arg>locator=${_LBL_EMAIL}</arg>
+<arg>text=${random_user}@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:36.615368" elapsed="0.430554"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:37.045922" level="INFO">Typing text '0998891115' into text field 'xpath=//input[@id=':r1u:' and @type='text']'.</msg>
+<arg>locator=${_LBL_PHONE}</arg>
+<arg>text=${phone}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:37.045922" elapsed="0.098741"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:37.145707" level="INFO">Typing text '9z9f5gbd@gmail.com' into text field 'xpath=//input[@name="confirmEmail"]'.</msg>
+<arg>locator=${_LBL_CONFIRM_EMAIL}</arg>
+<arg>text=${random_user}@gmail.com</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:37.145707" elapsed="0.501084"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:37.647804" level="INFO">Clicking element 'xpath=//button[@type="submit"]'.</msg>
+<arg>locator=${_BTN_OWNER_SUBMIT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:37.646791" elapsed="0.241932"/>
+</kw>
+<status status="PASS" start="2025-08-21T14:19:30.478641" elapsed="7.411203"/>
+</branch>
+<branch type="ELSE">
+<kw name="Fail" owner="BuiltIn">
+<arg>msg=Popup Not Found</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-08-21T14:19:37.889844" elapsed="0.000504"/>
+</kw>
+<status status="NOT RUN" start="2025-08-21T14:19:37.889844" elapsed="0.000504"/>
+</branch>
+<status status="PASS" start="2025-08-21T14:19:30.478641" elapsed="7.411707"/>
+</if>
+<arg>frist_name=${_FRIST_NAME}</arg>
+<arg>last_name=${_LAST_NAME}</arg>
+<arg>address_id_card=${_ADDRESS_ID_CARD}</arg>
+<arg>zip_code=${_ZIP_CODE}</arg>
+<arg>provice=${_PROVICE}</arg>
+<arg>county=${_COUNTY}</arg>
+<arg>district=${_DISTRICT}</arg>
+<arg>phone=${_PHONE}</arg>
+<doc>Owner : Danai Lertkamjornwat
+|     ***| Description |***
+|     Keyword ระบุข้อมูลรถ
+--------------------------------------------------------------------------
+|     ***| Required Parameter |***
+|     ดนัย        : ชื่อ
+|     เลิศกำจรวัฒน์         : นามสกุล
+|     91/22   : ที่อยู่ตามบัตรประชาชน
+|     10140          : รหัสไปรษณีย์
+|     กรุงเทพมหานคร           : จังหวัด
+|     ทุ่งครุ่            : เขต
+|     บางมด          : แขวง
+|     ${email}             : อีเมล
+|     0998891115             : เบอร์โทร
+--------------------------------------------------------------------------
+|     ***| Optional Parameter |***
+|     $timeout    : เวลา Wait Element (ค่า default = 15)
+--------------------------------------------------------------------------
+|     ***| Examples of use |***
+|     Input Field Owner Information Popup    ${password}     🗂️ ใช้ภายในไฟล์
+|     InformationPage.Input Field Owner Information Popup    ${password}   🌐 ใช้ภายนอกไฟล์
+==&gt;</doc>
+<status status="PASS" start="2025-08-21T14:19:30.145526" elapsed="7.744822"/>
+</kw>
+<kw name="Click Submit Button" owner="InformationPage">
+<kw name="_Set Test Local Variables" owner="InformationPage" type="SETUP">
+<variable name="${_TIMEOUT_RETURN_STATUS}" scope="test">
+<msg time="2025-08-21T14:19:37.899354" level="INFO">${_TIMEOUT_RETURN_STATUS} = 3</msg>
+<var>${Time_Out.Return_Status}</var>
+<status status="PASS" start="2025-08-21T14:19:37.898353" elapsed="0.001001"/>
+</variable>
+<variable name="${_TIMEOUT_RETURN_STATUS_MEDIUM}" scope="test">
+<msg time="2025-08-21T14:19:37.903662" level="INFO">${_TIMEOUT_RETURN_STATUS_MEDIUM} = 10</msg>
+<var>${Time_Out.Return_Status_Medium}</var>
+<status status="PASS" start="2025-08-21T14:19:37.899354" elapsed="0.006324"/>
+</variable>
+<variable name="${_TIMEOUT_RETURN_STATUS_QUICK}" scope="test">
+<msg time="2025-08-21T14:19:37.906662" level="INFO">${_TIMEOUT_RETURN_STATUS_QUICK} = 1</msg>
+<var>${Time_Out.Return_Status_Quick}</var>
+<status status="PASS" start="2025-08-21T14:19:37.905678" elapsed="0.001982"/>
+</variable>
+<variable name="${_TIMEOUT_LONG}" scope="test">
+<msg time="2025-08-21T14:19:37.908677" level="INFO">${_TIMEOUT_LONG} = 60</msg>
+<var>${Time_Out.Long}</var>
+<status status="PASS" start="2025-08-21T14:19:37.907660" elapsed="0.001017"/>
+</variable>
+<variable name="${_TIMEOUT_DEFAULT}" scope="test">
+<msg time="2025-08-21T14:19:37.910677" level="INFO">${_TIMEOUT_DEFAULT} = 15</msg>
+<var>${Time_Out.Default}</var>
+<status status="PASS" start="2025-08-21T14:19:37.909677" elapsed="0.001542"/>
+</variable>
+<variable name="${_BTN_CAR_INFORMATION}" scope="test">
+<msg time="2025-08-21T14:19:37.913229" level="INFO">${_BTN_CAR_INFORMATION} = xpath=//div[text()='ข้อมูลรถที่เอาประกัน']</msg>
+<var>${Xpath.Information.btnCarInformation}</var>
+<status status="PASS" start="2025-08-21T14:19:37.912229" elapsed="0.001000"/>
+</variable>
+<variable name="${_BTN_BRAND}" scope="test">
+<msg time="2025-08-21T14:19:37.914227" level="INFO">${_BTN_BRAND} = xpath=//div[text()='กรุณาเลือกยี่ห้อ']</msg>
+<var>${Xpath.Information.CarPopup.btnBrand}</var>
+<status status="PASS" start="2025-08-21T14:19:37.913229" elapsed="0.001996"/>
+</variable>
+<variable name="${_RADIO_BRAND}" scope="test">
+<msg time="2025-08-21T14:19:37.916226" level="INFO">${_RADIO_BRAND} = xpath=//li[text()='Audi']</msg>
+<var>${Xpath.Information.CarPopup.radioBrand}</var>
+<status status="PASS" start="2025-08-21T14:19:37.915225" elapsed="0.001001"/>
+</variable>
+<variable name="${_BTN_MODEL}" scope="test">
+<msg time="2025-08-21T14:19:37.918744" level="INFO">${_BTN_MODEL} = xpath=//div[text()='กรุณาเลือกรุ่น']</msg>
+<var>${Xpath.Information.CarPopup.btnModel}</var>
+<status status="PASS" start="2025-08-21T14:19:37.916226" elapsed="0.002518"/>
+</variable>
+<variable name="${_RADIO_MODEL}" scope="test">
+<msg time="2025-08-21T14:19:37.923382" level="INFO">${_RADIO_MODEL} = xpath=//li[text()='A5']</msg>
+<var>${Xpath.Information.CarPopup.radioModel}</var>
+<status status="PASS" start="2025-08-21T14:19:37.918744" elapsed="0.005647"/>
+</variable>
+<variable name="${_BTN_YEAR_OF_REGISTRATION}" scope="test">
+<msg time="2025-08-21T14:19:37.925387" level="INFO">${_BTN_YEAR_OF_REGISTRATION} = xpath=//div[text()='กรุณาเลือกปีจดทะเบียน']</msg>
+<var>${Xpath.Information.CarPopup.btnYearOfRegistration}</var>
+<status status="PASS" start="2025-08-21T14:19:37.924391" elapsed="0.001999"/>
+</variable>
+<variable name="${_RADIO_YEAR_OF_REGISTRATION}" scope="test">
+<msg time="2025-08-21T14:19:37.975951" level="INFO">${_RADIO_YEAR_OF_REGISTRATION} = xpath=//li[text()='2567 (2024)']</msg>
+<var>${Xpath.Information.CarPopup.radioYearOfRegistration}</var>
+<status status="PASS" start="2025-08-21T14:19:37.926390" elapsed="0.049561"/>
+</variable>
+<variable name="${_LBL_VEHICLE_NUMBER}" scope="test">
+<msg time="2025-08-21T14:19:37.978467" level="INFO">${_LBL_VEHICLE_NUMBER} = xpath=//input[@id=':rc:' and @type='text']</msg>
+<var>${Xpath.Information.CarPopup.lblVehicleNumber}</var>
+<status status="PASS" start="2025-08-21T14:19:37.977458" elapsed="0.001009"/>
+</variable>
+<variable name="${_BTN_CAR_COLOR}" scope="test">
+<msg time="2025-08-21T14:19:37.979587" level="INFO">${_BTN_CAR_COLOR} = xpath=//div[text()='กรุณาเลือกสีรถ']</msg>
+<var>${Xpath.Information.CarPopup.btnCarColor}</var>
+<status status="PASS" start="2025-08-21T14:19:37.978467" elapsed="0.001120"/>
+</variable>
+<variable name="${_RADIO_CAR_COLOR}" scope="test">
+<msg time="2025-08-21T14:19:37.980580" level="INFO">${_RADIO_CAR_COLOR} = xpath=//li[text()='ขาว']</msg>
+<var>${Xpath.Information.CarPopup.radioCarColor}</var>
+<status status="PASS" start="2025-08-21T14:19:37.979587" elapsed="0.000993"/>
+</variable>
+<variable name="${_LBL_ENGINE_SIZE}" scope="test">
+<msg time="2025-08-21T14:19:37.982322" level="INFO">${_LBL_ENGINE_SIZE} = xpath=//input[@id=':rh:' and @type='text']</msg>
+<var>${Xpath.Information.CarPopup.lblEngineSize}</var>
+<status status="PASS" start="2025-08-21T14:19:37.981206" elapsed="0.001116"/>
+</variable>
+<variable name="${_LBL_VEHICLE_REGISTRATION_NUMBER}" scope="test">
+<msg time="2025-08-21T14:19:37.983240" level="INFO">${_LBL_VEHICLE_REGISTRATION_NUMBER} = xpath=//input[@id=':rk:' and @type='text']</msg>
+<var>${Xpath.Information.CarPopup.lblVehicleRegistrationNumber}</var>
+<status status="PASS" start="2025-08-21T14:19:37.982322" elapsed="0.001885"/>
+</variable>
+<variable name="${_BTN_PROVINCE}" scope="test">
+<msg time="2025-08-21T14:19:37.990318" level="INFO">${_BTN_PROVINCE} = xpath=//div[text()='กรุณาเลือกจังหวัด']</msg>
+<var>${Xpath.Information.CarPopup.btnProVince}</var>
+<status status="PASS" start="2025-08-21T14:19:37.985207" elapsed="0.007116"/>
+</variable>
+<variable name="${_RADIO_PROVINCE}" scope="test">
+<msg time="2025-08-21T14:19:37.993324" level="INFO">${_RADIO_PROVINCE} = xpath=//li[text()='กรุงเทพมหานคร']</msg>
+<var>${Xpath.Information.CarPopup.radioProVince}</var>
+<status status="PASS" start="2025-08-21T14:19:37.993324" elapsed="0.000000"/>
+</variable>
+<variable name="${_BTN_DAY}" scope="test">
+<msg time="2025-08-21T14:19:37.995447" level="INFO">${_BTN_DAY} = xpath=//div[text()='วว']</msg>
+<var>${Xpath.Information.CarPopup.btnDay}</var>
+<status status="PASS" start="2025-08-21T14:19:37.994453" elapsed="0.000994"/>
+</variable>
+<variable name="${_RADIO_DAY}" scope="test">
+<msg time="2025-08-21T14:19:37.996410" level="INFO">${_RADIO_DAY} = xpath=//li[text()='01']</msg>
+<var>${Xpath.Information.CarPopup.radioDay}</var>
+<status status="PASS" start="2025-08-21T14:19:37.995447" elapsed="0.000963"/>
+</variable>
+<variable name="${_BTN_MOUNT}" scope="test">
+<msg time="2025-08-21T14:19:37.997440" level="INFO">${_BTN_MOUNT} = xpath=//div[text()='ดด']</msg>
+<var>${Xpath.Information.CarPopup.btnMount}</var>
+<status status="PASS" start="2025-08-21T14:19:37.996410" elapsed="0.002032"/>
+</variable>
+<variable name="${_RADIO_MOUNT}" scope="test">
+<msg time="2025-08-21T14:19:37.998442" level="INFO">${_RADIO_MOUNT} = xpath=//li[text()='09']</msg>
+<var>${Xpath.Information.CarPopup.radioMount}</var>
+<status status="PASS" start="2025-08-21T14:19:37.998442" elapsed="0.001001"/>
+</variable>
+<variable name="${_BTN_YEAR}" scope="test">
+<msg time="2025-08-21T14:19:38.000439" level="INFO">${_BTN_YEAR} = xpath=//div[text()='ปปปป']</msg>
+<var>${Xpath.Information.CarPopup.btnYear}</var>
+<status status="PASS" start="2025-08-21T14:19:37.999443" elapsed="0.000996"/>
+</variable>
+<variable name="${_RADIO_YEAR}" scope="test">
+<msg time="2025-08-21T14:19:38.008536" level="INFO">${_RADIO_YEAR} = xpath=//li[text()='2568']</msg>
+<var>${Xpath.Information.CarPopup.radioYear}</var>
+<status status="PASS" start="2025-08-21T14:19:38.000439" elapsed="0.009094"/>
+</variable>
+<variable name="${_BTN_SUBMIT}" scope="test">
+<msg time="2025-08-21T14:19:38.010424" level="INFO">${_BTN_SUBMIT} = xpath=//button[@type="submit"]</msg>
+<var>${Xpath.Information.CarPopup.btnSubmit}</var>
+<status status="PASS" start="2025-08-21T14:19:38.009533" elapsed="0.001515"/>
+</variable>
+<variable name="${_BTN_OWNER_INFORMATION}" scope="test">
+<msg time="2025-08-21T14:19:38.013176" level="INFO">${_BTN_OWNER_INFORMATION} = xpath=//div[text()='ข้อมูลเจ้าของกรมธรรม์']</msg>
+<var>${Xpath.Information.btnOwnerInformation}</var>
+<status status="PASS" start="2025-08-21T14:19:38.011048" elapsed="0.002128"/>
+</variable>
+<variable name="${_BTN_PREFIX}" scope="test">
+<msg time="2025-08-21T14:19:38.014182" level="INFO">${_BTN_PREFIX} = xpath=//div[text()='กรุณาระบุคำนำหน้าชื่อ']</msg>
+<var>${Xpath.Information.OwnerPopup.btnPrefix}</var>
+<status status="PASS" start="2025-08-21T14:19:38.013176" elapsed="0.001992"/>
+</variable>
+<variable name="${_RADIO_PREFIX}" scope="test">
+<msg time="2025-08-21T14:19:38.016162" level="INFO">${_RADIO_PREFIX} = xpath=//li[text()='นาย']</msg>
+<var>${Xpath.Information.OwnerPopup.radioPrefix}</var>
+<status status="PASS" start="2025-08-21T14:19:38.015168" elapsed="0.000994"/>
+</variable>
+<variable name="${_LBL_FRIST_NAME}" scope="test">
+<msg time="2025-08-21T14:19:38.016162" level="INFO">${_LBL_FRIST_NAME} = xpath=//input[@id=':r11:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblFristName}</var>
+<status status="PASS" start="2025-08-21T14:19:38.016162" elapsed="0.000000"/>
+</variable>
+<variable name="${_LBL_LAST_NAME}" scope="test">
+<msg time="2025-08-21T14:19:38.022244" level="INFO">${_LBL_LAST_NAME} = xpath=//input[@id=':r14:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblLastName}</var>
+<status status="PASS" start="2025-08-21T14:19:38.016162" elapsed="0.007150"/>
+</variable>
+<variable name="${_BTN_OWNER_DAY}" scope="test">
+<msg time="2025-08-21T14:19:38.024238" level="INFO">${_BTN_OWNER_DAY} = xpath=//div[text()='วว']</msg>
+<var>${Xpath.Information.OwnerPopup.btnDay}</var>
+<status status="PASS" start="2025-08-21T14:19:38.023312" elapsed="0.000926"/>
+</variable>
+<variable name="${_RADIO_OWNER_DAY}" scope="test">
+<msg time="2025-08-21T14:19:38.025310" level="INFO">${_RADIO_OWNER_DAY} = xpath=//li[text()='01']</msg>
+<var>${Xpath.Information.OwnerPopup.radioDay}</var>
+<status status="PASS" start="2025-08-21T14:19:38.025310" elapsed="0.000998"/>
+</variable>
+<variable name="${_BTN_OWNER_MOUNT}" scope="test">
+<msg time="2025-08-21T14:19:38.027297" level="INFO">${_BTN_OWNER_MOUNT} = xpath=//div[text()='ดด']</msg>
+<var>${Xpath.Information.OwnerPopup.btnMount}</var>
+<status status="PASS" start="2025-08-21T14:19:38.026308" elapsed="0.000989"/>
+</variable>
+<variable name="${_RADIO_OWNER_MOUNT}" scope="test">
+<msg time="2025-08-21T14:19:38.028297" level="INFO">${_RADIO_OWNER_MOUNT} = xpath=//li[text()='06']</msg>
+<var>${Xpath.Information.OwnerPopup.radioMount}</var>
+<status status="PASS" start="2025-08-21T14:19:38.027297" elapsed="0.001000"/>
+</variable>
+<variable name="${_BTN_OWNER_YEAR}" scope="test">
+<msg time="2025-08-21T14:19:38.029295" level="INFO">${_BTN_OWNER_YEAR} = xpath=//div[text()='ปปปป']</msg>
+<var>${Xpath.Information.OwnerPopup.btnYear}</var>
+<status status="PASS" start="2025-08-21T14:19:38.028297" elapsed="0.000998"/>
+</variable>
+<variable name="${_RADIO_OWNER_YEAR}" scope="test">
+<msg time="2025-08-21T14:19:38.030299" level="INFO">${_RADIO_OWNER_YEAR} = xpath=//li[text()='2546']</msg>
+<var>${Xpath.Information.OwnerPopup.radioYear}</var>
+<status status="PASS" start="2025-08-21T14:19:38.029295" elapsed="0.001004"/>
+</variable>
+<variable name="${_LBL_ID_CARD}" scope="test">
+<msg time="2025-08-21T14:19:38.030915" level="INFO">${_LBL_ID_CARD} = xpath=//input[@id=':r1d:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblIDCard}</var>
+<status status="PASS" start="2025-08-21T14:19:38.030299" elapsed="0.000616"/>
+</variable>
+<variable name="${_LBL_ADDRESS_ID_CRAD}" scope="test">
+<msg time="2025-08-21T14:19:38.031918" level="INFO">${_LBL_ADDRESS_ID_CRAD} = xpath=//input[@id=':r1g:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblAddressIDCard}</var>
+<status status="PASS" start="2025-08-21T14:19:38.031918" elapsed="0.001129"/>
+</variable>
+<variable name="${_LBL_ZIP_CODE}" scope="test">
+<msg time="2025-08-21T14:19:38.033047" level="INFO">${_LBL_ZIP_CODE} = xpath=//input[@id=':r1j:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblZipCode}</var>
+<status status="PASS" start="2025-08-21T14:19:38.033047" elapsed="0.000975"/>
+</variable>
+<variable name="${_LBL_OWNER_PROVICE}" scope="test">
+<msg time="2025-08-21T14:19:38.038556" level="INFO">${_LBL_OWNER_PROVICE} = xpath=//input[@id=':r1l:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblProvice}</var>
+<status status="PASS" start="2025-08-21T14:19:38.034918" elapsed="0.004640"/>
+</variable>
+<variable name="${_LBL_COUNTY}" scope="test">
+<msg time="2025-08-21T14:19:38.040556" level="INFO">${_LBL_COUNTY} = xpath=//input[@id=':r1n:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblCounty}</var>
+<status status="PASS" start="2025-08-21T14:19:38.039558" elapsed="0.001625"/>
+</variable>
+<variable name="${_LBL_DISTRICT}" scope="test">
+<msg time="2025-08-21T14:19:38.042323" level="INFO">${_LBL_DISTRICT} = xpath=//input[@id=':r1p:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblDistrict}</var>
+<status status="PASS" start="2025-08-21T14:19:38.041183" elapsed="0.001140"/>
+</variable>
+<variable name="${_LBL_EMAIL}" scope="test">
+<msg time="2025-08-21T14:19:38.043187" level="INFO">${_LBL_EMAIL} = xpath=//input[@id=':r1r:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblEmail}</var>
+<status status="PASS" start="2025-08-21T14:19:38.042323" elapsed="0.001860"/>
+</variable>
+<variable name="${_LBL_CONFIRM_EMAIL}" scope="test">
+<msg time="2025-08-21T14:19:38.045183" level="INFO">${_LBL_CONFIRM_EMAIL} = xpath=//input[@name="confirmEmail"]</msg>
+<var>${Xpath.Information.OwnerPopup.lblConfirmEmail}</var>
+<status status="PASS" start="2025-08-21T14:19:38.044183" elapsed="0.001000"/>
+</variable>
+<variable name="${_LBL_PHONE}" scope="test">
+<msg time="2025-08-21T14:19:38.046184" level="INFO">${_LBL_PHONE} = xpath=//input[@id=':r1u:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblPhone}</var>
+<status status="PASS" start="2025-08-21T14:19:38.046184" elapsed="0.001510"/>
+</variable>
+<variable name="${_BTN_OWNER_SUBMIT}" scope="test">
+<msg time="2025-08-21T14:19:38.048718" level="INFO">${_BTN_OWNER_SUBMIT} = xpath=//button[@type="submit"]</msg>
+<var>${Xpath.Information.OwnerPopup.btnSubmit}</var>
+<status status="PASS" start="2025-08-21T14:19:38.047694" elapsed="0.001024"/>
+</variable>
+<variable name="${_BTN_MAIN_SUBMIT}" scope="test">
+<msg time="2025-08-21T14:19:38.049716" level="INFO">${_BTN_MAIN_SUBMIT} = xpath=//button[text()='ดำเนินการต่อ']</msg>
+<var>${Xpath.Information.btnSubmit}</var>
+<status status="PASS" start="2025-08-21T14:19:38.048718" elapsed="0.000998"/>
+</variable>
+<variable name="${_BTN_NEXT}" scope="test">
+<msg time="2025-08-21T14:19:38.051204" level="INFO">${_BTN_NEXT} = xpath=//button[text()='ถัดไป']</msg>
+<var>${Xpath.Information.btnNext}</var>
+<status status="PASS" start="2025-08-21T14:19:38.049716" elapsed="0.003708"/>
+</variable>
+<tag>robot:private</tag>
+<doc>เตรียมตัวแปรสำหรับใช้งานในแต่ละ Keywords</doc>
+<status status="PASS" start="2025-08-21T14:19:37.897354" elapsed="0.156070"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${_BTN_MAIN_SUBMIT}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-21T14:19:38.054447" elapsed="0.121499"/>
+</kw>
+<msg time="2025-08-21T14:19:38.176631" level="INFO">${Status} = True</msg>
+<var>${Status}</var>
+<arg>SeleniumLibrary.Wait Until Element Is Visible</arg>
+<arg>${_BTN_MAIN_SUBMIT}</arg>
+<arg>${timeout}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-08-21T14:19:38.054447" elapsed="0.122184"/>
+</kw>
+<if>
+<branch type="IF" condition="${Status}">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:38.177138" level="INFO">Clicking element 'xpath=//button[text()='ดำเนินการต่อ']'.</msg>
+<arg>${_BTN_MAIN_SUBMIT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:38.177138" elapsed="0.122008"/>
+</kw>
+<status status="PASS" start="2025-08-21T14:19:38.176631" elapsed="0.122515"/>
+</branch>
+<branch type="ELSE">
+<kw name="Fail" owner="BuiltIn">
+<arg>msg=Button Not Found</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-08-21T14:19:38.299146" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-08-21T14:19:38.299146" elapsed="0.001512"/>
+</branch>
+<status status="PASS" start="2025-08-21T14:19:38.176631" elapsed="0.124027"/>
+</if>
+<doc>Owner : Danai Lertkamjornwat
+|     ***| Description |***
+|     Keyword เลือก Insurance Type
+--------------------------------------------------------------------------
+|     ***| Optional Parameter |***
+|     $timeout    : เวลา Wait Element (ค่า default = 15)
+--------------------------------------------------------------------------
+|     ***| Examples of use |***
+|     Click Submit Button     🗂️ ใช้ภายในไฟล์
+|     InformationPage.Click Submit Button   🌐 ใช้ภายนอกไฟล์
+==&gt;</doc>
+<status status="PASS" start="2025-08-21T14:19:37.894356" elapsed="0.406302"/>
+</kw>
+<kw name="Click Next Button" owner="InformationPage">
+<kw name="_Set Test Local Variables" owner="InformationPage" type="SETUP">
+<variable name="${_TIMEOUT_RETURN_STATUS}" scope="test">
+<msg time="2025-08-21T14:19:38.307822" level="INFO">${_TIMEOUT_RETURN_STATUS} = 3</msg>
+<var>${Time_Out.Return_Status}</var>
+<status status="PASS" start="2025-08-21T14:19:38.307316" elapsed="0.001516"/>
+</variable>
+<variable name="${_TIMEOUT_RETURN_STATUS_MEDIUM}" scope="test">
+<msg time="2025-08-21T14:19:38.310347" level="INFO">${_TIMEOUT_RETURN_STATUS_MEDIUM} = 10</msg>
+<var>${Time_Out.Return_Status_Medium}</var>
+<status status="PASS" start="2025-08-21T14:19:38.308832" elapsed="0.001515"/>
+</variable>
+<variable name="${_TIMEOUT_RETURN_STATUS_QUICK}" scope="test">
+<msg time="2025-08-21T14:19:38.312357" level="INFO">${_TIMEOUT_RETURN_STATUS_QUICK} = 1</msg>
+<var>${Time_Out.Return_Status_Quick}</var>
+<status status="PASS" start="2025-08-21T14:19:38.310347" elapsed="0.002010"/>
+</variable>
+<variable name="${_TIMEOUT_LONG}" scope="test">
+<msg time="2025-08-21T14:19:38.313875" level="INFO">${_TIMEOUT_LONG} = 60</msg>
+<var>${Time_Out.Long}</var>
+<status status="PASS" start="2025-08-21T14:19:38.312863" elapsed="0.001012"/>
+</variable>
+<variable name="${_TIMEOUT_DEFAULT}" scope="test">
+<msg time="2025-08-21T14:19:38.315875" level="INFO">${_TIMEOUT_DEFAULT} = 15</msg>
+<var>${Time_Out.Default}</var>
+<status status="PASS" start="2025-08-21T14:19:38.313875" elapsed="0.002000"/>
+</variable>
+<variable name="${_BTN_CAR_INFORMATION}" scope="test">
+<msg time="2025-08-21T14:19:38.319046" level="INFO">${_BTN_CAR_INFORMATION} = xpath=//div[text()='ข้อมูลรถที่เอาประกัน']</msg>
+<var>${Xpath.Information.btnCarInformation}</var>
+<status status="PASS" start="2025-08-21T14:19:38.315875" elapsed="0.003171"/>
+</variable>
+<variable name="${_BTN_BRAND}" scope="test">
+<msg time="2025-08-21T14:19:38.322346" level="INFO">${_BTN_BRAND} = xpath=//div[text()='กรุณาเลือกยี่ห้อ']</msg>
+<var>${Xpath.Information.CarPopup.btnBrand}</var>
+<status status="PASS" start="2025-08-21T14:19:38.319969" elapsed="0.002883"/>
+</variable>
+<variable name="${_RADIO_BRAND}" scope="test">
+<msg time="2025-08-21T14:19:38.323858" level="INFO">${_RADIO_BRAND} = xpath=//li[text()='Audi']</msg>
+<var>${Xpath.Information.CarPopup.radioBrand}</var>
+<status status="PASS" start="2025-08-21T14:19:38.322852" elapsed="0.043668"/>
+</variable>
+<variable name="${_BTN_MODEL}" scope="test">
+<msg time="2025-08-21T14:19:38.372238" level="INFO">${_BTN_MODEL} = xpath=//div[text()='กรุณาเลือกรุ่น']</msg>
+<var>${Xpath.Information.CarPopup.btnModel}</var>
+<status status="PASS" start="2025-08-21T14:19:38.366520" elapsed="0.005718"/>
+</variable>
+<variable name="${_RADIO_MODEL}" scope="test">
+<msg time="2025-08-21T14:19:38.373248" level="INFO">${_RADIO_MODEL} = xpath=//li[text()='A5']</msg>
+<var>${Xpath.Information.CarPopup.radioModel}</var>
+<status status="PASS" start="2025-08-21T14:19:38.373248" elapsed="0.001002"/>
+</variable>
+<variable name="${_BTN_YEAR_OF_REGISTRATION}" scope="test">
+<msg time="2025-08-21T14:19:38.375249" level="INFO">${_BTN_YEAR_OF_REGISTRATION} = xpath=//div[text()='กรุณาเลือกปีจดทะเบียน']</msg>
+<var>${Xpath.Information.CarPopup.btnYearOfRegistration}</var>
+<status status="PASS" start="2025-08-21T14:19:38.374250" elapsed="0.001997"/>
+</variable>
+<variable name="${_RADIO_YEAR_OF_REGISTRATION}" scope="test">
+<msg time="2025-08-21T14:19:38.376247" level="INFO">${_RADIO_YEAR_OF_REGISTRATION} = xpath=//li[text()='2567 (2024)']</msg>
+<var>${Xpath.Information.CarPopup.radioYearOfRegistration}</var>
+<status status="PASS" start="2025-08-21T14:19:38.376247" elapsed="0.001106"/>
+</variable>
+<variable name="${_LBL_VEHICLE_NUMBER}" scope="test">
+<msg time="2025-08-21T14:19:38.377950" level="INFO">${_LBL_VEHICLE_NUMBER} = xpath=//input[@id=':rc:' and @type='text']</msg>
+<var>${Xpath.Information.CarPopup.lblVehicleNumber}</var>
+<status status="PASS" start="2025-08-21T14:19:38.377353" elapsed="0.000597"/>
+</variable>
+<variable name="${_BTN_CAR_COLOR}" scope="test">
+<msg time="2025-08-21T14:19:38.379087" level="INFO">${_BTN_CAR_COLOR} = xpath=//div[text()='กรุณาเลือกสีรถ']</msg>
+<var>${Xpath.Information.CarPopup.btnCarColor}</var>
+<status status="PASS" start="2025-08-21T14:19:38.377950" elapsed="0.001137"/>
+</variable>
+<variable name="${_RADIO_CAR_COLOR}" scope="test">
+<msg time="2025-08-21T14:19:38.380595" level="INFO">${_RADIO_CAR_COLOR} = xpath=//li[text()='ขาว']</msg>
+<var>${Xpath.Information.CarPopup.radioCarColor}</var>
+<status status="PASS" start="2025-08-21T14:19:38.379087" elapsed="0.001508"/>
+</variable>
+<variable name="${_LBL_ENGINE_SIZE}" scope="test">
+<msg time="2025-08-21T14:19:38.381603" level="INFO">${_LBL_ENGINE_SIZE} = xpath=//input[@id=':rh:' and @type='text']</msg>
+<var>${Xpath.Information.CarPopup.lblEngineSize}</var>
+<status status="PASS" start="2025-08-21T14:19:38.380595" elapsed="0.001008"/>
+</variable>
+<variable name="${_LBL_VEHICLE_REGISTRATION_NUMBER}" scope="test">
+<msg time="2025-08-21T14:19:38.382604" level="INFO">${_LBL_VEHICLE_REGISTRATION_NUMBER} = xpath=//input[@id=':rk:' and @type='text']</msg>
+<var>${Xpath.Information.CarPopup.lblVehicleRegistrationNumber}</var>
+<status status="PASS" start="2025-08-21T14:19:38.382604" elapsed="0.001001"/>
+</variable>
+<variable name="${_BTN_PROVINCE}" scope="test">
+<msg time="2025-08-21T14:19:38.385274" level="INFO">${_BTN_PROVINCE} = xpath=//div[text()='กรุณาเลือกจังหวัด']</msg>
+<var>${Xpath.Information.CarPopup.btnProVince}</var>
+<status status="PASS" start="2025-08-21T14:19:38.383605" elapsed="0.001669"/>
+</variable>
+<variable name="${_RADIO_PROVINCE}" scope="test">
+<msg time="2025-08-21T14:19:38.387730" level="INFO">${_RADIO_PROVINCE} = xpath=//li[text()='กรุงเทพมหานคร']</msg>
+<var>${Xpath.Information.CarPopup.radioProVince}</var>
+<status status="PASS" start="2025-08-21T14:19:38.386720" elapsed="0.002018"/>
+</variable>
+<variable name="${_BTN_DAY}" scope="test">
+<msg time="2025-08-21T14:19:38.389738" level="INFO">${_BTN_DAY} = xpath=//div[text()='วว']</msg>
+<var>${Xpath.Information.CarPopup.btnDay}</var>
+<status status="PASS" start="2025-08-21T14:19:38.388738" elapsed="0.001000"/>
+</variable>
+<variable name="${_RADIO_DAY}" scope="test">
+<msg time="2025-08-21T14:19:38.392250" level="INFO">${_RADIO_DAY} = xpath=//li[text()='01']</msg>
+<var>${Xpath.Information.CarPopup.radioDay}</var>
+<status status="PASS" start="2025-08-21T14:19:38.389738" elapsed="0.002512"/>
+</variable>
+<variable name="${_BTN_MOUNT}" scope="test">
+<msg time="2025-08-21T14:19:38.393706" level="INFO">${_BTN_MOUNT} = xpath=//div[text()='ดด']</msg>
+<var>${Xpath.Information.CarPopup.btnMount}</var>
+<status status="PASS" start="2025-08-21T14:19:38.393706" elapsed="0.001326"/>
+</variable>
+<variable name="${_RADIO_MOUNT}" scope="test">
+<msg time="2025-08-21T14:19:38.395032" level="INFO">${_RADIO_MOUNT} = xpath=//li[text()='09']</msg>
+<var>${Xpath.Information.CarPopup.radioMount}</var>
+<status status="PASS" start="2025-08-21T14:19:38.395032" elapsed="0.001492"/>
+</variable>
+<variable name="${_BTN_YEAR}" scope="test">
+<msg time="2025-08-21T14:19:38.396524" level="INFO">${_BTN_YEAR} = xpath=//div[text()='ปปปป']</msg>
+<var>${Xpath.Information.CarPopup.btnYear}</var>
+<status status="PASS" start="2025-08-21T14:19:38.396524" elapsed="0.001168"/>
+</variable>
+<variable name="${_RADIO_YEAR}" scope="test">
+<msg time="2025-08-21T14:19:38.398699" level="INFO">${_RADIO_YEAR} = xpath=//li[text()='2568']</msg>
+<var>${Xpath.Information.CarPopup.radioYear}</var>
+<status status="PASS" start="2025-08-21T14:19:38.397692" elapsed="0.001007"/>
+</variable>
+<variable name="${_BTN_SUBMIT}" scope="test">
+<msg time="2025-08-21T14:19:38.399699" level="INFO">${_BTN_SUBMIT} = xpath=//button[@type="submit"]</msg>
+<var>${Xpath.Information.CarPopup.btnSubmit}</var>
+<status status="PASS" start="2025-08-21T14:19:38.398699" elapsed="0.001000"/>
+</variable>
+<variable name="${_BTN_OWNER_INFORMATION}" scope="test">
+<msg time="2025-08-21T14:19:38.400703" level="INFO">${_BTN_OWNER_INFORMATION} = xpath=//div[text()='ข้อมูลเจ้าของกรมธรรม์']</msg>
+<var>${Xpath.Information.btnOwnerInformation}</var>
+<status status="PASS" start="2025-08-21T14:19:38.399699" elapsed="0.003706"/>
+</variable>
+<variable name="${_BTN_PREFIX}" scope="test">
+<msg time="2025-08-21T14:19:38.406403" level="INFO">${_BTN_PREFIX} = xpath=//div[text()='กรุณาระบุคำนำหน้าชื่อ']</msg>
+<var>${Xpath.Information.OwnerPopup.btnPrefix}</var>
+<status status="PASS" start="2025-08-21T14:19:38.403405" elapsed="0.002998"/>
+</variable>
+<variable name="${_RADIO_PREFIX}" scope="test">
+<msg time="2025-08-21T14:19:38.407403" level="INFO">${_RADIO_PREFIX} = xpath=//li[text()='นาย']</msg>
+<var>${Xpath.Information.OwnerPopup.radioPrefix}</var>
+<status status="PASS" start="2025-08-21T14:19:38.406403" elapsed="0.002005"/>
+</variable>
+<variable name="${_LBL_FRIST_NAME}" scope="test">
+<msg time="2025-08-21T14:19:38.409407" level="INFO">${_LBL_FRIST_NAME} = xpath=//input[@id=':r11:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblFristName}</var>
+<status status="PASS" start="2025-08-21T14:19:38.408408" elapsed="0.002000"/>
+</variable>
+<variable name="${_LBL_LAST_NAME}" scope="test">
+<msg time="2025-08-21T14:19:38.410913" level="INFO">${_LBL_LAST_NAME} = xpath=//input[@id=':r14:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblLastName}</var>
+<status status="PASS" start="2025-08-21T14:19:38.410408" elapsed="0.000505"/>
+</variable>
+<variable name="${_BTN_OWNER_DAY}" scope="test">
+<msg time="2025-08-21T14:19:38.412335" level="INFO">${_BTN_OWNER_DAY} = xpath=//div[text()='วว']</msg>
+<var>${Xpath.Information.OwnerPopup.btnDay}</var>
+<status status="PASS" start="2025-08-21T14:19:38.410913" elapsed="0.001422"/>
+</variable>
+<variable name="${_RADIO_OWNER_DAY}" scope="test">
+<msg time="2025-08-21T14:19:38.413344" level="INFO">${_RADIO_OWNER_DAY} = xpath=//li[text()='01']</msg>
+<var>${Xpath.Information.OwnerPopup.radioDay}</var>
+<status status="PASS" start="2025-08-21T14:19:38.412335" elapsed="0.001009"/>
+</variable>
+<variable name="${_BTN_OWNER_MOUNT}" scope="test">
+<msg time="2025-08-21T14:19:38.414342" level="INFO">${_BTN_OWNER_MOUNT} = xpath=//div[text()='ดด']</msg>
+<var>${Xpath.Information.OwnerPopup.btnMount}</var>
+<status status="PASS" start="2025-08-21T14:19:38.413344" elapsed="0.001999"/>
+</variable>
+<variable name="${_RADIO_OWNER_MOUNT}" scope="test">
+<msg time="2025-08-21T14:19:38.415343" level="INFO">${_RADIO_OWNER_MOUNT} = xpath=//li[text()='06']</msg>
+<var>${Xpath.Information.OwnerPopup.radioMount}</var>
+<status status="PASS" start="2025-08-21T14:19:38.415343" elapsed="0.001001"/>
+</variable>
+<variable name="${_BTN_OWNER_YEAR}" scope="test">
+<msg time="2025-08-21T14:19:38.417343" level="INFO">${_BTN_OWNER_YEAR} = xpath=//div[text()='ปปปป']</msg>
+<var>${Xpath.Information.OwnerPopup.btnYear}</var>
+<status status="PASS" start="2025-08-21T14:19:38.416344" elapsed="0.000999"/>
+</variable>
+<variable name="${_RADIO_OWNER_YEAR}" scope="test">
+<msg time="2025-08-21T14:19:38.420361" level="INFO">${_RADIO_OWNER_YEAR} = xpath=//li[text()='2546']</msg>
+<var>${Xpath.Information.OwnerPopup.radioYear}</var>
+<status status="PASS" start="2025-08-21T14:19:38.417343" elapsed="0.004084"/>
+</variable>
+<variable name="${_LBL_ID_CARD}" scope="test">
+<msg time="2025-08-21T14:19:38.422437" level="INFO">${_LBL_ID_CARD} = xpath=//input[@id=':r1d:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblIDCard}</var>
+<status status="PASS" start="2025-08-21T14:19:38.421427" elapsed="0.002064"/>
+</variable>
+<variable name="${_LBL_ADDRESS_ID_CRAD}" scope="test">
+<msg time="2025-08-21T14:19:38.424490" level="INFO">${_LBL_ADDRESS_ID_CRAD} = xpath=//input[@id=':r1g:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblAddressIDCard}</var>
+<status status="PASS" start="2025-08-21T14:19:38.423491" elapsed="0.000999"/>
+</variable>
+<variable name="${_LBL_ZIP_CODE}" scope="test">
+<msg time="2025-08-21T14:19:38.425491" level="INFO">${_LBL_ZIP_CODE} = xpath=//input[@id=':r1j:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblZipCode}</var>
+<status status="PASS" start="2025-08-21T14:19:38.424490" elapsed="0.001001"/>
+</variable>
+<variable name="${_LBL_OWNER_PROVICE}" scope="test">
+<msg time="2025-08-21T14:19:38.473371" level="INFO">${_LBL_OWNER_PROVICE} = xpath=//input[@id=':r1l:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblProvice}</var>
+<status status="PASS" start="2025-08-21T14:19:38.425491" elapsed="0.047880"/>
+</variable>
+<variable name="${_LBL_COUNTY}" scope="test">
+<msg time="2025-08-21T14:19:38.474681" level="INFO">${_LBL_COUNTY} = xpath=//input[@id=':r1n:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblCounty}</var>
+<status status="PASS" start="2025-08-21T14:19:38.474681" elapsed="0.001138"/>
+</variable>
+<variable name="${_LBL_DISTRICT}" scope="test">
+<msg time="2025-08-21T14:19:38.476522" level="INFO">${_LBL_DISTRICT} = xpath=//input[@id=':r1p:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblDistrict}</var>
+<status status="PASS" start="2025-08-21T14:19:38.475819" elapsed="0.000703"/>
+</variable>
+<variable name="${_LBL_EMAIL}" scope="test">
+<msg time="2025-08-21T14:19:38.477529" level="INFO">${_LBL_EMAIL} = xpath=//input[@id=':r1r:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblEmail}</var>
+<status status="PASS" start="2025-08-21T14:19:38.476522" elapsed="0.001007"/>
+</variable>
+<variable name="${_LBL_CONFIRM_EMAIL}" scope="test">
+<msg time="2025-08-21T14:19:38.478536" level="INFO">${_LBL_CONFIRM_EMAIL} = xpath=//input[@name="confirmEmail"]</msg>
+<var>${Xpath.Information.OwnerPopup.lblConfirmEmail}</var>
+<status status="PASS" start="2025-08-21T14:19:38.477529" elapsed="0.001007"/>
+</variable>
+<variable name="${_LBL_PHONE}" scope="test">
+<msg time="2025-08-21T14:19:38.479701" level="INFO">${_LBL_PHONE} = xpath=//input[@id=':r1u:' and @type='text']</msg>
+<var>${Xpath.Information.OwnerPopup.lblPhone}</var>
+<status status="PASS" start="2025-08-21T14:19:38.479701" elapsed="0.001007"/>
+</variable>
+<variable name="${_BTN_OWNER_SUBMIT}" scope="test">
+<msg time="2025-08-21T14:19:38.480708" level="INFO">${_BTN_OWNER_SUBMIT} = xpath=//button[@type="submit"]</msg>
+<var>${Xpath.Information.OwnerPopup.btnSubmit}</var>
+<status status="PASS" start="2025-08-21T14:19:38.480708" elapsed="0.001008"/>
+</variable>
+<variable name="${_BTN_MAIN_SUBMIT}" scope="test">
+<msg time="2025-08-21T14:19:38.482716" level="INFO">${_BTN_MAIN_SUBMIT} = xpath=//button[text()='ดำเนินการต่อ']</msg>
+<var>${Xpath.Information.btnSubmit}</var>
+<status status="PASS" start="2025-08-21T14:19:38.481716" elapsed="0.001000"/>
+</variable>
+<variable name="${_BTN_NEXT}" scope="test">
+<msg time="2025-08-21T14:19:38.483716" level="INFO">${_BTN_NEXT} = xpath=//button[text()='ถัดไป']</msg>
+<var>${Xpath.Information.btnNext}</var>
+<status status="PASS" start="2025-08-21T14:19:38.482716" elapsed="0.004137"/>
+</variable>
+<tag>robot:private</tag>
+<doc>เตรียมตัวแปรสำหรับใช้งานในแต่ละ Keywords</doc>
+<status status="PASS" start="2025-08-21T14:19:38.305811" elapsed="0.181549"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${_BTN_NEXT}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-21T14:19:38.539868" elapsed="0.585251"/>
+</kw>
+<msg time="2025-08-21T14:19:39.126145" level="INFO">${Status} = True</msg>
+<var>${Status}</var>
+<arg>SeleniumLibrary.Wait Until Element Is Visible</arg>
+<arg>${_BTN_NEXT}</arg>
+<arg>${timeout}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-08-21T14:19:38.487360" elapsed="0.638785"/>
+</kw>
+<if>
+<branch type="IF" condition="${Status}">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:39.127678" level="INFO">Clicking element 'xpath=//button[text()='ถัดไป']'.</msg>
+<arg>${_BTN_NEXT}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:39.126145" elapsed="0.072558"/>
+</kw>
+<status status="PASS" start="2025-08-21T14:19:39.126145" elapsed="0.072558"/>
+</branch>
+<branch type="ELSE">
+<kw name="Fail" owner="BuiltIn">
+<arg>msg=Button Not Found</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-08-21T14:19:39.199703" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-08-21T14:19:39.198703" elapsed="0.001000"/>
+</branch>
+<status status="PASS" start="2025-08-21T14:19:39.126145" elapsed="0.073558"/>
+</if>
+<doc>Owner : Danai Lertkamjornwat
+|     ***| Description |***
+|     Keyword เลือก Insurance Type
+--------------------------------------------------------------------------
+|     ***| Optional Parameter |***
+|     $timeout    : เวลา Wait Element (ค่า default = 15)
+--------------------------------------------------------------------------
+|     ***| Examples of use |***
+|     Click Next Button     🗂️ ใช้ภายในไฟล์
+|     InformationPage.Click Next Button   🌐 ใช้ภายนอกไฟล์
+==&gt;</doc>
+<status status="PASS" start="2025-08-21T14:19:38.303811" elapsed="0.895892"/>
+</kw>
+<kw name="Click Choose Payment Method Button" owner="SummaryInformationPage">
+<kw name="_Set Test Local Variables" owner="SummaryInformationPage" type="SETUP">
+<variable name="${_TIMEOUT_RETURN_STATUS}" scope="test">
+<msg time="2025-08-21T14:19:39.217759" level="INFO">${_TIMEOUT_RETURN_STATUS} = 3</msg>
+<var>${Time_Out.Return_Status}</var>
+<status status="PASS" start="2025-08-21T14:19:39.216254" elapsed="0.002520"/>
+</variable>
+<variable name="${_TIMEOUT_RETURN_STATUS_MEDIUM}" scope="test">
+<msg time="2025-08-21T14:19:39.221269" level="INFO">${_TIMEOUT_RETURN_STATUS_MEDIUM} = 10</msg>
+<var>${Time_Out.Return_Status_Medium}</var>
+<status status="PASS" start="2025-08-21T14:19:39.218774" elapsed="0.002495"/>
+</variable>
+<variable name="${_TIMEOUT_RETURN_STATUS_QUICK}" scope="test">
+<msg time="2025-08-21T14:19:39.222273" level="INFO">${_TIMEOUT_RETURN_STATUS_QUICK} = 1</msg>
+<var>${Time_Out.Return_Status_Quick}</var>
+<status status="PASS" start="2025-08-21T14:19:39.221269" elapsed="0.002008"/>
+</variable>
+<variable name="${_TIMEOUT_LONG}" scope="test">
+<msg time="2025-08-21T14:19:39.224277" level="INFO">${_TIMEOUT_LONG} = 60</msg>
+<var>${Time_Out.Long}</var>
+<status status="PASS" start="2025-08-21T14:19:39.223277" elapsed="0.001000"/>
+</variable>
+<variable name="${_TIMEOUT_DEFAULT}" scope="test">
+<msg time="2025-08-21T14:19:39.253542" level="INFO">${_TIMEOUT_DEFAULT} = 15</msg>
+<var>${Time_Out.Default}</var>
+<status status="PASS" start="2025-08-21T14:19:39.224277" elapsed="0.031260"/>
+</variable>
+<variable name="${_BTN_CHOOSE_PAYMENT_METHOD}" scope="test">
+<msg time="2025-08-21T14:19:39.257537" level="INFO">${_BTN_CHOOSE_PAYMENT_METHOD} = xpath=//button[text()='เลือกวิธีการชำระเงิน']</msg>
+<var>${Xpath.SummaryInformation.btnChoosePaymentMethod}</var>
+<status status="PASS" start="2025-08-21T14:19:39.255537" elapsed="0.002000"/>
+</variable>
+<variable name="${_BTN_OTP}" scope="test">
+<msg time="2025-08-21T14:19:39.258536" level="INFO">${_BTN_OTP} = xpath=//button[text()='ขอ OTP']</msg>
+<var>${Xpath.SummaryInformation.btnOTP}</var>
+<status status="PASS" start="2025-08-21T14:19:39.257537" elapsed="0.000999"/>
+</variable>
+<tag>robot:private</tag>
+<doc>เตรียมตัวแปรสำหรับใช้งานในแต่ละ Keywords</doc>
+<status status="PASS" start="2025-08-21T14:19:39.215255" elapsed="0.044306"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-08-21T14:19:42.259979" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-08-21T14:19:39.259561" elapsed="3.000945"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${_BTN_CHOOSE_PAYMENT_METHOD}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-08-21T14:19:42.262527" elapsed="0.293746"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:42.557782" level="INFO">Clicking element 'xpath=//button[text()='เลือกวิธีการชำระเงิน']'.</msg>
+<arg>${_BTN_CHOOSE_PAYMENT_METHOD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:42.556273" elapsed="0.089784"/>
+</kw>
+<doc>Owner : Danai Lertkamjornwat
+|     ***| Description |***
+|     Keyword กดปุ่ม ดำเนินการต่อ
+--------------------------------------------------------------------------
+|     ***| Optional Parameter |***
+|     $timeout    : เวลา Wait Element (ค่า default = 15)
+--------------------------------------------------------------------------
+|     ***| Examples of use |***
+|     Click Choose Payment Method Button     🗂️ ใช้ภายในไฟล์
+|     SummaryInformationPage.Click Choose Payment Method Button   🌐 ใช้ภายนอกไฟล์
+==&gt;</doc>
+<status status="PASS" start="2025-08-21T14:19:39.206219" elapsed="3.439838"/>
+</kw>
+<kw name="Click OTP Button" owner="SummaryInformationPage">
+<kw name="_Set Test Local Variables" owner="SummaryInformationPage" type="SETUP">
+<variable name="${_TIMEOUT_RETURN_STATUS}" scope="test">
+<msg time="2025-08-21T14:19:42.653570" level="INFO">${_TIMEOUT_RETURN_STATUS} = 3</msg>
+<var>${Time_Out.Return_Status}</var>
+<status status="PASS" start="2025-08-21T14:19:42.652550" elapsed="0.002035"/>
+</variable>
+<variable name="${_TIMEOUT_RETURN_STATUS_MEDIUM}" scope="test">
+<msg time="2025-08-21T14:19:42.656566" level="INFO">${_TIMEOUT_RETURN_STATUS_MEDIUM} = 10</msg>
+<var>${Time_Out.Return_Status_Medium}</var>
+<status status="PASS" start="2025-08-21T14:19:42.654585" elapsed="0.002986"/>
+</variable>
+<variable name="${_TIMEOUT_RETURN_STATUS_QUICK}" scope="test">
+<msg time="2025-08-21T14:19:42.663955" level="INFO">${_TIMEOUT_RETURN_STATUS_QUICK} = 1</msg>
+<var>${Time_Out.Return_Status_Quick}</var>
+<status status="PASS" start="2025-08-21T14:19:42.659071" elapsed="0.005950"/>
+</variable>
+<variable name="${_TIMEOUT_LONG}" scope="test">
+<msg time="2025-08-21T14:19:42.666212" level="INFO">${_TIMEOUT_LONG} = 60</msg>
+<var>${Time_Out.Long}</var>
+<status status="PASS" start="2025-08-21T14:19:42.665021" elapsed="0.001191"/>
+</variable>
+<variable name="${_TIMEOUT_DEFAULT}" scope="test">
+<msg time="2025-08-21T14:19:42.671441" level="INFO">${_TIMEOUT_DEFAULT} = 15</msg>
+<var>${Time_Out.Default}</var>
+<status status="PASS" start="2025-08-21T14:19:42.667769" elapsed="0.006640"/>
+</variable>
+<variable name="${_BTN_CHOOSE_PAYMENT_METHOD}" scope="test">
+<msg time="2025-08-21T14:19:42.676458" level="INFO">${_BTN_CHOOSE_PAYMENT_METHOD} = xpath=//button[text()='เลือกวิธีการชำระเงิน']</msg>
+<var>${Xpath.SummaryInformation.btnChoosePaymentMethod}</var>
+<status status="PASS" start="2025-08-21T14:19:42.674409" elapsed="0.002990"/>
+</variable>
+<variable name="${_BTN_OTP}" scope="test">
+<msg time="2025-08-21T14:19:42.679390" level="INFO">${_BTN_OTP} = xpath=//button[text()='ขอ OTP']</msg>
+<var>${Xpath.SummaryInformation.btnOTP}</var>
+<status status="PASS" start="2025-08-21T14:19:42.677399" elapsed="0.001991"/>
+</variable>
+<tag>robot:private</tag>
+<doc>เตรียมตัวแปรสำหรับใช้งานในแต่ละ Keywords</doc>
+<status status="PASS" start="2025-08-21T14:19:42.651081" elapsed="0.028309"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${_BTN_OTP}</arg>
+<arg>${timeout}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-08-21T14:19:42.712079" elapsed="0.034077"/>
+</kw>
+<msg time="2025-08-21T14:19:42.746156" level="INFO">${Status} = True</msg>
+<var>${Status}</var>
+<arg>SeleniumLibrary.Wait Until Element Is Visible</arg>
+<arg>${_BTN_OTP}</arg>
+<arg>${timeout}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2025-08-21T14:19:42.679988" elapsed="0.066168"/>
+</kw>
+<if>
+<branch type="IF" condition="${Status}">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-08-21T14:19:42.747661" level="INFO">Clicking element 'xpath=//button[text()='ขอ OTP']'.</msg>
+<arg>${_BTN_OTP}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-08-21T14:19:42.746156" elapsed="0.178549"/>
+</kw>
+<status status="PASS" start="2025-08-21T14:19:42.746156" elapsed="0.178549"/>
+</branch>
+<branch type="ELSE">
+<kw name="Fail" owner="BuiltIn">
+<arg>msg=Button Not Found</arg>
+<doc>Fails the test with the given message and optionally alters its tags.</doc>
+<status status="NOT RUN" start="2025-08-21T14:19:42.924705" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2025-08-21T14:19:42.924705" elapsed="0.000999"/>
+</branch>
+<status status="PASS" start="2025-08-21T14:19:42.746156" elapsed="0.179548"/>
+</if>
+<doc>Owner : Danai Lertkamjornwat
+|     ***| Description |***
+|     Keyword กดปุ่ม ดำเนินการต่อ
+--------------------------------------------------------------------------
+|     ***| Optional Parameter |***
+|     $timeout    : เวลา Wait Element (ค่า default = 15)
+--------------------------------------------------------------------------
+|     ***| Examples of use |***
+|     Click OTP Button     🗂️ ใช้ภายในไฟล์
+|     SummaryInformationPage.Click OTP Button   🌐 ใช้ภายนอกไฟล์
+==&gt;</doc>
+<status status="PASS" start="2025-08-21T14:19:42.647564" elapsed="0.278140"/>
+</kw>
+<doc>Owner : Danai Lertkamjornwat
+|    ***| Description |***
+|    ตรวจสอบเข้าสู่ระบบสำเร็จ
+--------------------------------------------------------------------------
+|    ***| Test Step |***
+|    1. เปิดเว็บไซต์
+|    2. เลือกประเภทประกัน
+|    3. ระบุ Password
+|    4. คลิกปุ่ม Login
+|    5. แสดงหน้าเข้าสู่ระบบ
+|    6. ปิด Browser
+--------------------------------------------------------------------------
+|    ***| Expected Result |***
+|    ต้องเข้าสู่ระบบได้ถูกต้อง
+==&gt;</doc>
+<tag>success</tag>
+<status status="PASS" start="2025-08-21T14:19:15.548111" elapsed="27.378599"/>
+</test>
+<status status="PASS" start="2025-08-21T14:19:15.038467" elapsed="27.894322"/>
+</suite>
+<status status="PASS" start="2025-08-21T14:19:15.034466" elapsed="27.961039"/>
+</suite>
+<status status="PASS" start="2025-08-21T14:19:15.004293" elapsed="27.999040"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">success</stat>
+</tag>
+<suite>
+<stat name="Dhipaya" id="s1" pass="1" fail="0" skip="0">Dhipaya</stat>
+<stat name="TestScript" id="s1-s1" pass="1" fail="0" skip="0">Dhipaya.TestScript</stat>
+<stat name="FlowTest" id="s1-s1-s1" pass="1" fail="0" skip="0">Dhipaya.TestScript.FlowTest</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
